@@ -5,6 +5,12 @@
   -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
 }
 
+/* # Note
+  .g1 [1/2]for
+  .g2 [1/3]for P2+4 
+  .g3 [whole page]
+  .g4 for P1 right part
+  .g5 for P1 left part  */
 /* HTML5 DECLARATIONS */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, dialog {display: block}
 audio[controls],canvas,video {display: inline-block; *display: inline; zoom: 1}
