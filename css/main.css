@@ -109,16 +109,18 @@ span.amp{font-family:Adobe Caslon Pro,Baskerville,"Goudy Old Style","Palatino","
 .cf {zoom:1} /* For IE 6/7 (trigger hasLayout) */
 
 /* DEFAULT MOBILE STYLE */
-body {width: 92%; margin: 0 auto} /* Center page without wrapper */
+body {width: 95%; margin: 0 auto} /* Center page without wrapper */
 /* column grid */
 .g1,.g2,.g3{display:block; position: relative; margin-left: 1%; margin-right: 1%}
+.g4.g5{display:block; position: relative; margin-left: 1%; margin-right: 1%}
 /* 1 column grid */
 .g1,.g2,.g3{width:98.0%}
+.g4.g5{width:98.0%}
 
 /* Wrapper */
 .main{
   padding-top: 50px;
-  max-width: 1020px;
+  max-width: 1100px;
 }
 .wrapper{
   margin: 0 auto;
@@ -163,7 +165,7 @@ body {width: 92%; margin: 0 auto} /* Center page without wrapper */
 /* Backgrounds */
 
 .bg-1{
-  background-image: url('../images/floor.jpg');
+  background-image: url('../images/sky.jpg');
 }
 
 /* Header */
@@ -192,7 +194,7 @@ body {width: 92%; margin: 0 auto} /* Center page without wrapper */
   display: none;
 }
 #tab-data-wrap{
-  padding: 30px 20px;
+  padding: 20px 20px;
   background: #fff;
   border: 1px solid #f1f1f1;
   box-shadow: 0px 6px #c0392b;
@@ -209,13 +211,13 @@ body {width: 92%; margin: 0 auto} /* Center page without wrapper */
   border-bottom: 0px;
   -moz-border-radius: 4px 4px 0 0;
   -webkit-border-radius: 4px 4px 0 0;
-  margin-right:10px; 
+  margin-right:0px; 
 }
 
 .tab a {
   font-weight: bold;
-  text-transform: uppercase;
-  font-size: 14px;
+  text-transform: full-width;
+  font-size: 15px;
   display: block;
   padding: 2px 10px;
   outline: none;
@@ -257,21 +259,20 @@ body {width: 92%; margin: 0 auto} /* Center page without wrapper */
   overflow: hidden;
 }
 .photo img{
- -webkit-border-radius: 4px;
- -moz-border-radius: 4px;
- border-radius: 4px;
- width: 100%;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  width: 100%;
 }
-.info{
 
-}
+
 .info h2, #header h2{
   text-transform: uppercase;
   letter-spacing: 2px;
   margin-bottom: .3em;
 }
 .info h4, #header h4{
-  color: #999;
+  color: #A9B8C6;
 }
 /* Contact */
 .main-links{
@@ -317,11 +318,9 @@ body {width: 92%; margin: 0 auto} /* Center page without wrapper */
 }
 .item-box i{
   float: left;
-  margin-right: 12px;
+  margin-right: 15px;
 }
-.item-box i.icon-envelope{
 
-}
 .item-box .item-data{
  margin-top: 6px;
 }
@@ -333,7 +332,7 @@ body {width: 92%; margin: 0 auto} /* Center page without wrapper */
 }
 .item-box .item-data p{
   margin: 0px;
-  font-size: 12px;
+  font-size: 15px;
   color: #999;
 }
 
@@ -363,8 +362,8 @@ body {width: 92%; margin: 0 auto} /* Center page without wrapper */
 }
 
 .btn-primary.btn-outline {
-  color: #0095eb;
-  border-color: #0095eb;
+  color: #fcfcfc;
+  border-color: #5bc0de;
 }
 
 .btn-success.btn-outline {
@@ -376,11 +375,11 @@ body {width: 92%; margin: 0 auto} /* Center page without wrapper */
 }
 
 .btn-warning.btn-outline {
-  color: #f0ad4e;
+  color: #5bc0de;
 }
 
 .btn-danger.btn-outline {
-  color: #d9534f;
+  color: #5bc0de;
 }
 
 .btn-primary.btn-outline:hover,
@@ -508,6 +507,24 @@ body {width: 92%; margin: 0 auto} /* Center page without wrapper */
 .label-info[href]:hover,
 .label-info[href]:focus {
   background-color: #7B90D2;
+}
+
+.label-info_2 {
+  background-color: #5f97d2;
+}
+
+.label-info_2[href]:hover,
+.label-info_2[href]:focus {
+  background-color: #5f97d2;
+}
+
+.label-info_3 {
+  background-color: #d76364;
+}
+
+.label-info_2[href]:hover,
+.label-info_3[href]:focus {
+  background-color: #d76364;
 }
 
 .label[href]:hover,
@@ -718,16 +735,19 @@ Change widths as necessary
 
   /* Sidebar */
   .sidebar{
-   padding-left: 20px;
-   border-left: 1px solid #f1f1f1;
- }
+    padding-left: 20px;
+    border-left: 1px solid #f1f1f1;
+  }
  /* COLUMN GRID */
- .g1,.g2,.g3 {display:inline; float: left}
+  .g1,.g2,.g3,.g5 {display:inline; float: left}
+  .g4{display:inline; float: right}
 
  /* 2 COLUMN GRID */
- .g1 {width:48.0%}
- .g2 {width:48.0%}
- .g3 {width:98.0%}
+  .g1 {width:48.0%}
+  .g2 {width:48.0%}
+  .g3 {width:98.0%}
+  .g4 {width:25.0%}
+  .g5 {width:50.0%}
 }
 
 /* LANDSCAPE TABLET/NETBOOK/LAPTOP */
@@ -752,6 +772,8 @@ Change widths as necessary
   .g1 {width:31.333%}
   .g2 {width:64.667%;}
   .g3 {width:98.0%}
+  .g4 {width:25.0%}
+  .g5 {width:73.0%}
 }
 
 @media only screen and (min-width: 1280px) { 
