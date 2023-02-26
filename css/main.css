@@ -145,11 +145,11 @@ body {width: 92%; margin: 0 auto} /* Center page without wrapper */
   background-size: cover;
 }
 .clearfix:after { 
- content: "."; 
- visibility: hidden; 
- display: block; 
- height: 0; 
- clear: both;
+  content: "."; 
+  visibility: hidden; 
+  display: block; 
+  height: 0; 
+  clear: both;
 }
 .no-list{
   margin: 0px;
@@ -502,13 +502,14 @@ body {width: 92%; margin: 0 auto} /* Center page without wrapper */
   border-radius: .25em;
 }
 .label-info {
-  background-color: #5bc0de;
+  background-color: #7B90D2;
 }
 
 .label-info[href]:hover,
 .label-info[href]:focus {
-  background-color: #31b0d5;
+  background-color: #7B90D2;
 }
+
 .label[href]:hover,
 .label[href]:focus {
   color: #ffffff;
