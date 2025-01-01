@@ -1,10 +1,14 @@
 # Zihao-Eric GUO
 
 My site is live at https://zihao-guo.github.io
-Test
-# !!! ing  !!! 
-- [ ] Project section
-    - [ ] Select different modules other modules disappear
-    - [ ] Add projet (modify the introduction of the RESEARCH section)
+
+
+# Memo
+Remember to save the cv to: /doc/CV/CV_Zihao_Eric_GUO.pdf
+
+
+## !!! ing  !!! 
+- [ ] Research interests
 - [ ] To be revised: house price forecasting + RL + mathematical modeling
-- [ ] Check the link
+
+
