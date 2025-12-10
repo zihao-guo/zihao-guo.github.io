@@ -1,0 +1,479 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Metas -->
+    <meta charset="utf-8">
+    <title>Zihao-Eric GUO's homepage</title>
+    <meta name="description" content="">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Css -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="assets/img/favicon.ico">
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/main.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/venobox.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/animate.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="css/fonts.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/owl-carousel/owl.carousel.css" rel="stylesheet"  media="all"/>
+    <link href="css/owl-carousel/owl.theme.css" rel="stylesheet"  media="all" />
+    <link href="css/owl-carousel/owl.transitions.css" rel="stylesheet"  media="all" />
+<!-- 字体示例 -->
+    <link href="http://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+</head>
+<body>
+<!-- 自定义鼠标特效 -->
+<div class="custom-cursor-holder">
+    <div class="circle-cursor   circle-cursor-top">
+       <span class="circle-cursor-inner"></span>
+    </div>
+    <div class="circle-cursor circle-cursor-bottom"></div>
+</div>
+   <div class="loader">
+      <div class="loader-inner">
+         <div class="bounce">
+            <div class="bounce-circle"></div>
+         </div>
+      </div>
+   </div>
+<!-- 背景 SVG 动画 -->
+<div class="parallax" data-relative-input="true">
+<!-- 省略背景 svg -->
+</div>
+<!-- 页面主体 -->
+<div id="wrapper" class="wrapper home">
+    <div class="container spacer-xlg">
+<!-- 统一放置在同一个 row 中，左侧侧边栏 + 右侧大内容 -->
+        <div class="row bg-primary-2 radius-2 shadow-lg">
+<!-- ========== sidebar ========== -->
+            <div class="col-lg-1 pl-lg-0 pr-lg-0 mb-lg-5">
+                <div class="sticky-lg-top">
+                    <header class="pl-lg-3 pt-6 pb-lg-6 text-center">
+                        <div class="position-relative d-inline-block">
+                            <a class="mb-menu position-absolute" href="#"></a>
+                            <a class="d-inline-block" href="index.html">
+                                <div class="profile-image">
+                                    <img class="rounded-circle img-sm shadow-h" src="assets/img/profile-circle.jpg" alt="Image">
+                                </div>
+                            </a>
+                        </div>
+                        
+                        <div class="mt-2 mb-3 mb-lg-4">
+                            <h6 class="text-white font-alt mb-0 h5 font-weight-600">Know Me</h6>
+                        </div>
+                        <nav id="main-nav" class="main-nav">
+                            <ul class="pl-0 mb-4 mb-lg-0">
+                                <li>
+                                    <a href="aboutME.html">
+                                        <span class="btn-round btn-round-sm d-inline-block radius-2 shadow-h">
+                                            <i class="fa fa-user btn-icon-inner"></i>
+                                        </span>
+                                        <span class="font-weight-600 text-uppercase d-block text-white">About Me</span>
+                                    </a>
+                                </li>
+                                <li class="active current">
+                                    <a href="project.html">
+                                        <span class="btn-round btn-round-sm d-inline-block radius-2 shadow-h">
+                                            <i class="fa fa-camera btn-icon-inner"></i>
+                                        </span>
+                                        <span class="font-weight-600 text-uppercase d-block text-white">Project</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="contact.html">
+                                        <span class="btn-round btn-round-sm d-inline-block radius-2 shadow-h">
+                                            <i class="fa fa-phone btn-icon-inner"></i>
+                                        </span>
+                                        <span class="font-weight-600 text-uppercase d-block text-white">Contact</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="text-center mt-4 d-none d-lg-block">
+                                <a href="https://github.com/zihao-guo/zihao-guo.github.io/blob/master/doc/CV/CV_Zihao_Eric_GUO.pdf"
+                                   target="_blank" rel="noopener noreferrer">
+                                    <span class="btn-round btn-round-md d-inline-block radius-2 shadow-h">
+                                        <i class="fa fa-download btn-icon-inner"></i>
+                                    </span>
+                                    <span class="font-weight-600 font-size-14 text-uppercase d-block text-white">
+                                        Get my cv
+                                    </span>
+                                </a>
+                            </div>
+                        </nav>
+                    </header>
+                </div>
+            </div>
+<!-- ========== /sidebar ========== -->
+<!-- ========== 右侧大内容 ========== -->
+            <div class="col-lg-11 pr-0 pl-lg-3 pl-0">
+<!-- 合并成一个板块 (section) 放置 「My project」与「My Research」 -->
+                <section class="min-h bg-white radius-half padding-dy">
+<!-- (1) 「My project」部分 -->
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="main-title position-relative mb-4">
+                                <h2 class="h4 ml-2 mb-0 font-weight-600">My Project</h2>
+                            </div>
+                        </div>
+                    </div>
+<!-- 下面是各个项目的可点击卡片 -->
+                    <div class="container">
+                        <div class="module" id="module1" onclick="openModal('modal1')">
+                            <img src="images/Projet/amex.jpg" alt="模块1">
+                            <div class="hover-text">Type: Deep Learning</div>
+                        </div>
+                        <div class="module" id="module2" onclick="openModal('modal2')">
+                            <img src="images/Projet/Thyroid_Gland.jpg" alt="模块2">
+                            <div class="hover-text">Type: R language applications</div>
+                        </div>
+                        <div class="module" id="module3" onclick="openModal('modal3')">
+                            <img src="images/Projet/house_price.jpg" alt="模块3">
+                            <div class="hover-text">Type: Deep Learning(ViT model)</div>
+                        </div>
+                        <div class="module" id="module4" onclick="openModal('modal4')">
+                            <img src="images/Projet/reinforcement-learning.png" alt="模块4">
+                            <div class="hover-text">Type: Reinforcement learning</div>
+                        </div>
+                        <div class="rectangle-module" id="module5" onclick="openModal('modal5')">
+                            <img src="images/Projet/amecranexpress.png" alt="模块5">
+                            <div class="hover-text">Type: Deep Learning</div>
+                        </div>
+                        <div class="rectangle-module" id="module6" onclick="openModal('modal6')">
+                            <img src="images/Projet/mathmodel.png" alt="模块6">
+                            <div class="hover-text">Type: Mathematical modeling</div>
+                        </div>
+                    </div>
+<!-- ========== 弹窗内容（modals） ========== -->
+<!-- modal1 -->
+                    <div id="modal1" class="modal">
+                        <div class="modal-content">
+                            <span class="close-dot" onclick="closeModalByDot(this)"></span>
+                            <h5>American Express - Default Prediction</h5>
+                            <div class="right-aligned-text">
+                                <span class="label label-info_3">May.2022 - Aug.2022</span>
+                                <p><span><b>Bronze medal in kaggle competition</b></span></p>
+                            </div>
+                            <p>As team leader, I controlled pace, assigned tasks, and organized brainstorming...
+                                <br/><font color="#64363c"><u>Keywords:</u> Machine Learning · Stacking & Blending · Boosting algorithms</font>
+                            </p>
+                            <font color="#e28743">
+                                <b>
+                                    [Competition Website: 
+                                        <a href="https://www.kaggle.com/competitions/amex-default-prediction" target="_blank">
+                                            American Express
+                                        </a>
+                                    ]
+                                    <br/>
+                                    [Code Repository:
+                                        <a href="https://github.com/zihao-guo/American-Express---Default-Prediction" target="_blank">
+                                            View my code here
+                                        </a>
+                                    ]
+                                </b>
+                            </font>
+                        </div>
+                    </div>
+<!-- modal2 -->
+                    <div id="modal2" class="modal">
+                        <div class="modal-content">
+                            <span class="close-dot" onclick="closeModalByDot(this)"></span>
+                            <h5>Analysis of thyroid disease datasets</h5>
+                            <div class="right-aligned-text">
+                                <span class="label label-info">Dec.2022 - Jan.2023</span>
+                                <p><span><b>R language project</b></span></p>
+                            </div>
+                            <p>- Explore, cleanse and process thyroid disease data...
+                                <br/><font color="#64363c"><u>Keywords:</u> R language · Shiny · KNN imputation · PCA</font>
+                            </p>
+                            <font color="#e28743">
+                                <b>
+                                    [Project Requirements:
+                                        <a href="https://github.com/zihao-guo/R_projet/blob/main/Project.pdf" target="_blank">
+                                            The Thyroid Disease Data Set
+                                        </a>
+                                    ]
+                                    <br/>
+                                    [Code Repository:
+                                        <a href="https://github.com/zihao-guo/R_projet" target="_blank">
+                                            View my code here
+                                        </a>
+                                    ]
+                                </b>
+                            </font>
+                        </div>
+                    </div>
+<!-- modal3 -->
+                    <div id="modal3" class="modal">
+                        <div class="modal-content">
+                            <span class="close-dot" onclick="closeModalByDot(this)"></span>
+                            <h5>Under construction [ing]</h5>
+                            <div class="right-aligned-text">
+                                <span class="label label-warning">Dec.2022 - Jan.2023</span>
+                                <p><span><b>Under construction [ing]</b></span></p>
+                            </div>
+                            <p>Under construction [ing]
+                                <br/><font color="#64363c"><u>Keywords: Under construction [ing]</u></font>
+                            </p>
+                            <font color="#e28743">Under construction [ing]</font>
+                        </div>
+                    </div>
+<!-- modal4 -->
+                    <div id="modal4" class="modal">
+                        <div class="modal-content">
+                            <span class="close-dot" onclick="closeModalByDot(this)"></span>
+                            <h5>Under construction [ing]</h5>
+                            <div class="right-aligned-text">
+                                <span class="label label-warning">Dec.2022 - Jan.2023</span>
+                                <p><span><b>Under construction [ing]</b></span></p>
+                            </div>
+                            <p>Under construction [ing]
+                                <br/><font color="#64363c"><u>Keywords: Under construction [ing]</u></font>
+                            </p>
+                            <font color="#e28743">Under construction [ing]</font>
+                        </div>
+                    </div>
+<!-- modal5 -->
+                    <div id="modal5" class="modal">
+                        <div class="modal-content">
+                            <span class="close-dot" onclick="closeModalByDot(this)"></span>
+                            <h5>An attempt of Vit model for image classification task</h5>
+                            <div class="right-aligned-text">
+                                <span class="label label-info_2">Sep.2022</span>
+                                <p><span><b>Self-learning</b></span></p>
+                            </div>
+                            <p>Bi-directional classification task (i.e., between bees and ants) ...
+                                <br/><font color="#64363c"><u>Keywords:</u> Visual Transformers (ViT) · PyTorch · Image Processing</font>
+                            </p>
+                            <font color="#e28743">
+                                <b>
+                                    [Report:
+                                        <a href="https://drive.google.com/file/d/1D6pGS9TRc73ADaWxaJemCreopW1RGMtK/view?usp=sharing" target="_blank">
+                                            A brief report
+                                        </a>
+                                    ]
+                                    <br/>
+                                    [Dataset:
+                                        <a href="https://www.kaggle.com/datasets/gauravduttakiit/ants-bees" target="_blank">Ants & Bees</a>
+                                    ]
+                                    <br/>
+                                    [Code Repository:
+                                        <a href="https://github.com/zihao-guo/PyTorch-ViT_2-way-classification-task" target="_blank">
+                                            View my code here
+                                        </a>
+                                    ]
+                                </b>
+                            </font>
+                        </div>
+                    </div>
+<!-- modal6 -->
+                    <div id="modal6" class="modal">
+                        <div class="modal-content">
+                            <span class="close-dot" onclick="closeModalByDot(this)"></span>
+                            <h5>2018 Mathematical Modeling Competition - Design of Clothing...</h5>
+                            <div class="right-aligned-text">
+                                <span class="label label-warning">Sep.2018 - Oct.2018</span>
+                                <p><span><b>2018 China Undergraduate Group Second Prize</b></span></p>
+                            </div>
+                            <p>- Modeling the heat distribution of special clothing for high-temperature work ...
+                                <br/><font color="#64363c"><u>Keywords:</u> Fourier's law, Newton's law of cooling, thermodynamics</font>
+                            </p>
+                            <font color="#e28743">Under construction [ing]</font>
+                        </div>
+                    </div>
+<!-- /My project 结束 -->
+<!-- =========== SVG 分隔符 =========== -->
+                    <div class="row">
+                        <div class="col">
+                            <div class="mt-6 mb-6 text-center">
+                                <svg class="w-50 w-sm-40 w-md-30 w-lg-20" data-name="divider"
+                                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 185.54 9.24">
+                                    <path class="divider" d="M1.26,3.24C19.55,3.11,19.6,9.11,37.89,9S56.15,2.87,74.45,2.74,92.79,8.62,111.09,8.5s18.26-6.13,36.56-6.25S166,8.13,184.29,8"
+                                          transform="translate(-0.01 -1)"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+<!-- =========== /SVG 分隔符 =========== -->
+<!-- (2) 「My Research」部分 -->
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="main-title position-relative mb-4">
+                                <h2 class="h4 ml-2 mb-0 font-weight-600">My Research</h2>
+                            </div>
+                        </div>
+<!-- EBI -->
+                        <div class="col-md-6 col-lg-6 d-flex mb-5">
+                            <article>
+                                <a class="d-block item radius-1" href="2_project_EBI.html">
+                                    <img class="d-block radius-1" src="assets/img/paper/large/Logo_EBI.png" alt="Image">
+                                </a>
+                                <div class="pt-3">
+                                    <h3 class="h6 font-weight-600 pt-1">
+                                        <a class="" href="blog-single.html">Research Assistant</a>
+                                    </h3>
+                                    <p>
+                                        <font color="#64363c"><u>Keywords: Bioinformatics, Statistical modeling, Unix systems, Cluster</u></font>
+                                        <br/>[Tutored by:
+                                            <a href="https://www.ebi.ac.uk/people/person/nicola-de-maio/" target="_blank">
+                                                Dr. Nicola De Maio
+                                            </a>
+                                        ]
+                                    </p>
+                                </div>
+                            </article>
+                        </div>
+<!-- IFP -->
+                        <div class="col-md-6 col-lg-6 d-flex mb-5">
+                            <article>
+                                <a class="d-block item radius-1" href="1_project_IFP.html">
+                                    <img class="d-block radius-1" src="assets/img/paper/large/logo_ifpen.jpg" alt="Image">
+                                </a>
+                                <div class="pt-3">
+                                    <h3 class="h6 font-weight-600 pt-1">
+                                        <a class="" href="blog-single.html">Data Engineer</a>
+                                    </h3>
+                                    <p>
+                                        <font color="#64363c">
+                                            <u>Keywords: Django · HTML/CSS · MongoDB · Pytorch · Statsmodels · Time Series Analysis</u>
+                                        </font>
+                                        <br/>[Tutored by:
+                                            <a href="https://www.ifpenergiesnouvelles.com/page/pierre-michel" target="_blank">
+                                                Dr. Pierre MICHEL
+                                            </a>
+                                        ]
+                                    </p>
+                                </div>
+                            </article>
+                        </div>
+<!-- LS2N -->
+                        <div class="col-md-6 col-lg-6 d-flex mb-5">
+                            <article>
+                                <a class="d-block item radius-1">
+                                    <img class="d-block radius-1" src="assets/img/paper/large/bayes.png" alt="Image">
+                                </a>
+                                <div class="pt-3">
+                                    <h3 class="h6 font-weight-600 pt-1">
+                                        <a class="">Multi-task learning for Bayesian Networks</a>
+                                    </h3>
+                                    <p>
+                                        <font color="#64363c">
+                                            <u>Keywords: Bayesian Networks · Structure learning · Multi-task learning · Transfer learning</u>
+                                        </font>
+                                        <font color="#e28743">
+                                            <br/><b>
+                                                [Report(English version):
+                                                    <a href="https://github.com/zihao-guo/zihao-guo.github.io/blob/master/doc/PDF/22-23_ECN_Report/Projet_R_D___PILGRIM.pdf" target="_blank">
+                                                        Click here
+                                                    </a>
+                                                ]
+                                            </b>
+                                        </font>
+                                    </p>
+                                </div>
+                            </article>
+                        </div>
+<!-- MATHAPP -->
+                        <div class="col-md-6 col-lg-6 d-flex mb-5">
+                            <article>
+                                <a class="d-block item radius-1">
+                                    <img class="d-block radius-1" src="assets/img/paper/large/MATHAPP.png" alt="Image">
+                                </a>
+                                <div class="pt-3">
+                                    <h3 class="h6 font-weight-600 pt-1">
+                                        <a class="">Théorie des valeurs extrêmes ...</a>
+                                    </h3>
+                                    <p>
+                                        <font color="#64363c">
+                                            <u>Keywords: Statistical Modeling · Bioinformatics · Finance</u>
+                                        </font>
+                                        <font color="#e28743">
+                                            <br/><b>
+                                                [Report(French version):
+                                                    <a href="https://github.com/zihao-guo/zihao-guo.github.io/blob/master/doc/PDF/22-23_ECN_Report/MATH_APP2.pdf" target="_blank">
+                                                        Click here
+                                                    </a>
+                                                ]
+                                            </b>
+                                        </font>
+                                    </p>
+                                </div>
+                            </article>
+                        </div>
+<!-- UPJV
+                        <div class="col-md-6 col-lg-6 d-flex mb-5">
+                            <article>
+                                <a class="d-block item radius-1">
+                                    <img class="d-block radius-1" src="assets/img/paper/large/Logo_UPJV.png" alt="Image">
+                                </a>
+                                <div class="pt-3">
+                                    <h3 class="h6 font-weight-600 pt-1">
+                                        <a class="">CNC machining process design ...</a>
+                                    </h3>
+                                    <p>
+                                        <font color="#64363c">
+                                            <u>Keywords: CNC programming(UG) · 3D modeling(Solidworks) · CAD/Catia</u>
+                                        </font>
+                                        <font color="#e28743">
+                                            <br/><b>
+                                                [Report(French version):
+                                                    <a href="https://github.com/zihao-guo/zihao-guo.github.io/blob/master/doc/PDF/Inter_Report/UPJV_%5BFR%5DRapport_Zihao%20GUO_07.06.2021.pdf"
+                                                       target="_blank">
+                                                        Click here
+                                                    </a>
+                                                ]
+                                                <br/>
+                                                [Report(Chinese version):
+                                                    <a href="https://github.com/zihao-guo/zihao-guo.github.io/blob/master/doc/PDF/Inter_Report/UPJV_%5BCH%5DUPJV%20Rapport_Zihao%20GUO_07.06.2021.pdf"
+                                                       target="_blank">
+                                                        Click here
+                                                    </a>
+                                                ]
+                                            </b>
+                                        </font>
+                                    </p>
+                                </div>
+                            </article>
+                        </div>
+                    </div> -->
+<!-- /My Research 结束 -->
+
+                </section>
+            <!-- /合并为一个板块的 section -->
+                <footer class="mt-3">
+               <div >
+                  <p>© 2023 all rights By Zihao-Eric GUO - Always believe in goodness</p>
+               </div>
+            </footer>
+            </div><!-- /col-lg-11 -->
+        </div><!-- /row -->
+    </div><!-- /container -->
+
+    <!-- 返回顶部按钮 -->
+    <a class="scroll-to-top scroll" href="#wrapper">
+        <span class="btn-round btn-round-sm d-inline-block radius-2 shadow-h">
+            <i class="fas fa-arrow-up btn-icon-inner" aria-hidden="true"></i>
+        </span>
+    </a>
+<!-- 返回顶部按钮 -->
+<a class="scroll-to-top scroll" href="#wrapper">
+    <span class="btn-round btn-round-sm d-inline-block radius-2 shadow-h">
+        <i class="fas fa-arrow-up btn-icon-inner" aria-hidden="true"></i>
+    </span>
+</a>
+</div>
+<!-- /#wrapper -->
+<!-- JS 脚本 -->
+<script src="js/scripts.js"></script>
+<script src="js/jquery-1.12.4.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/smooth-scroll.js"></script>
+<script src="js/venobox.js"></script>
+<script src="js/owl.carousel.js"></script>
+<script src="js/placeholders.min.js"></script>
+<script src="js/parallax.js"></script>
+<script src="js/jquery.easy-pie-chart.js"></script>
+<script src="js/script.js"></script>
+<!-- 若有GA或其他统计也可在此插入 -->
+</body>
+</html>

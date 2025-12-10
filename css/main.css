@@ -122,6 +122,150 @@ Created by : mutationthemes
   stroke-miterlimit:10;
   stroke-width:1.5625rem;
 }
+.hero-grid-row{
+   margin-bottom:2rem;
+}
+.snake-news-card{
+   background:#f9fefe;
+   border-radius:1rem;
+   padding:1.5rem;
+   border:0.0625rem solid #e0f6f7;
+}
+.snake-news-kicker{
+   letter-spacing:0.2rem;
+   color:#16da9d;
+}
+.snake-description{
+   color:#546472;
+   font-size:0.95rem;
+}
+.snake-wrapper{
+   background:#ffffff;
+   border-radius:0.9rem;
+   padding:1.5rem;
+   border:0.0625rem solid #e0f6f7;
+}
+.snake-controls{
+   display:flex;
+   justify-content:center;
+   align-items:center;
+   gap:1.25rem;
+   flex-wrap:wrap;
+}
+.snake-dpad{
+   display:flex;
+   flex-direction:column;
+   align-items:center;
+   gap:0.5rem;
+}
+.snake-control-buttons{
+   display:flex;
+   flex-direction:column;
+   gap:0.5rem;
+   align-items:stretch;
+}
+.snake-dpad .dpad-row{
+   display:flex;
+   gap:0.5rem;
+}
+.snake-btn{
+   border:none;
+   background:#e8fbfc;
+   color:#2a4759;
+   font-weight:600;
+   padding:0.45rem 1.4rem;
+   border-radius:999px;
+   box-shadow:0 0.5rem 1rem rgba(0,0,0,0.08);
+   transition:transform 0.15s ease, box-shadow 0.15s ease;
+}
+.snake-btn:focus{
+   outline:2px solid #16da9d;
+   outline-offset:2px;
+}
+.snake-btn:active{
+   transform:translateY(1px) scale(0.98);
+   box-shadow:0 0.25rem 0.5rem rgba(0,0,0,0.08);
+}
+.snake-btn-dir{
+   width:4rem;
+   height:3rem;
+}
+.snake-btn-toggle{
+   min-width:5.5rem;
+}
+#newsSnakeCanvas{
+   width:100%;
+   max-width:420px;
+   display:block;
+   margin:0 auto;
+   border-radius:0.75rem;
+   border:0.0625rem solid #e0f6f7;
+   background:#f7fffe;
+}
+.snake-ui{
+   text-align:center;
+}
+.snake-guide{
+   font-size:0.9rem;
+   color:#6b7c93;
+}
+.snake-headline{
+   font-size:1rem;
+   font-weight:600;
+   color:#2a4759;
+}
+.snake-next{
+   font-size:0.95rem;
+   color:#5f7283;
+}
+.snake-modal{
+   position:fixed;
+   inset:0;
+   display:none;
+   align-items:center;
+   justify-content:center;
+   z-index:1050;
+}
+.snake-modal.is-visible{
+   display:flex;
+}
+.snake-modal__backdrop{
+   position:absolute;
+   inset:0;
+   background:rgba(0,0,0,0.5);
+   backdrop-filter:blur(3px);
+}
+.snake-modal__content{
+   position:relative;
+   background:#ffffff;
+   border-radius:1rem;
+   padding:2rem;
+   max-width:520px;
+   width:90%;
+   box-shadow:0 1.25rem 2.5rem rgba(0,0,0,0.25);
+}
+.snake-modal__list li{
+   border-top:none;
+}
+.snake-modal__actions{
+   display:flex;
+   flex-wrap:wrap;
+   gap:0.75rem;
+   justify-content:center;
+}
+.snake-modal__close{
+   margin:0;
+   display:inline-block;
+}
+@media (max-width:767.98px){
+   .snake-news-card{
+      padding:1rem;
+   }
+   .snake-btn-dir{
+      width:3rem;
+      height:2.5rem;
+   }
+}
 .p1 {
   left: 12%;
   top: 39%;
@@ -1367,3 +1511,123 @@ a {
 }
 
 /*End mediaqueries*/
+.hero-headline{
+   position:relative;
+   display:inline-block;
+   padding-right:2.5rem;
+   margin-bottom:0.5rem;
+}
+.hero-name{
+   background:linear-gradient(120deg,#16da9d,#2ecece);
+   -webkit-background-clip:text;
+   -webkit-text-fill-color:transparent;
+   animation:headline-glow 6s ease-in-out infinite;
+}
+.hero-name-glow{
+   position:absolute;
+   right:0;
+   top:50%;
+   transform:translateY(-50%);
+   width:1.2rem;
+   height:1.2rem;
+   border-radius:50%;
+   background:#16da9d;
+   box-shadow:0 0 1rem rgba(22,218,157,0.6);
+   animation:pulse 2.8s ease-in-out infinite;
+}
+.hero-role{
+   animation:fade-slide 0.8s ease forwards;
+   opacity:0;
+}
+.interest-card{
+   background:#f9ffff;
+   border-radius:0.75rem;
+   padding:1rem 1.5rem;
+   border:0.0625rem solid #e0f6f7;
+   box-shadow:0 0.8rem 1.6rem rgba(0,0,0,0.04);
+   animation:rise-in 0.9s ease forwards;
+   opacity:0;
+}
+.interest-title{
+   letter-spacing:0.12rem;
+   position:relative;
+   padding-left:1.2rem;
+}
+.interest-title:before{
+   content:"";
+   width:0.6rem;
+   height:0.6rem;
+   border-radius:999px;
+   background:#16da9d;
+   position:absolute;
+   left:0;
+   top:0.4rem;
+}
+.interest-list{
+   position:relative;
+   animation:typing 4s steps(40,end);
+}
+.resume-hero{
+   background:#ffffff;
+   border-radius:1rem;
+   padding:1.5rem 1.75rem;
+   border:0.0625rem solid #e0f6f7;
+   box-shadow:0 1.25rem 2.5rem rgba(0,0,0,0.05);
+}
+.resume-highlights{
+   list-style:none;
+   padding-left:0;
+   margin-bottom:0;
+   display:grid;
+   grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+   gap:0.75rem;
+}
+.resume-highlights li{
+   background:#f7fffe;
+   border-radius:0.75rem;
+   padding:0.75rem 1rem;
+   border:0.0625rem solid rgba(22,218,157,0.2);
+}
+.resume-highlights--compact{
+   grid-template-columns:repeat(3,minmax(0,1fr));
+}
+.highlight-value{
+   display:block;
+   font-size:1.5rem;
+   font-weight:700;
+   color:#16da9d;
+}
+.highlight-label{
+   font-size:0.9rem;
+   color:#546472;
+}
+
+@keyframes headline-glow{
+   0%{filter:drop-shadow(0 0 0 rgba(22,218,157,0));}
+   50%{filter:drop-shadow(0 0 0.35rem rgba(22,218,157,0.6));}
+   100%{filter:drop-shadow(0 0 0 rgba(22,218,157,0));}
+}
+@keyframes pulse{
+   0%,100%{transform:translateY(-50%) scale(0.9); opacity:0.7;}
+   50%{transform:translateY(-50%) scale(1.2); opacity:1;}
+}
+@keyframes fade-slide{
+   from{opacity:0; transform:translateY(12px);}
+   to{opacity:1; transform:translateY(0);}
+}
+@keyframes rise-in{
+   from{opacity:0; transform:translateY(30px) scale(0.98);}
+   to{opacity:1; transform:translateY(0) scale(1);}
+}
+@keyframes typing{
+   from{clip-path:inset(0 100% 0 0);}
+   to{clip-path:inset(0 0 0 0);}
+}
+
+.about-photo{max-width:320px;border-radius:1rem; width:100%; height:auto;}
+.publication-entry{border-radius:1rem;border:0.0625rem solid #e0f6f7;background:#fff;box-shadow:0 0.75rem 1.5rem rgba(0,0,0,0.05);}
+.publication-photo{width:64px;height:64px;border-radius:0.75rem;background:linear-gradient(135deg,#d1f2f3,#a6e0e7);display:flex;align-items:center;justify-content:center;text-transform:uppercase;font-weight:600;color:#3d5565;}
+.education-card,.teaching-card{border-radius:1rem;border:0.0625rem solid #e0f6f7;background:#fff;box-shadow:0 0.75rem 1.5rem rgba(0,0,0,0.04);}
+.teaching-card--full{width:100%;}
+
+.about-photo{max-width:320px;border-radius:1rem;width:100%;height:auto;}

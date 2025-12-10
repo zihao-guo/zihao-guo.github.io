@@ -1,7 +1,7 @@
 # Repository Guidelines
 
 ## Project Structure & Module Organization
-The root hosts individually crafted HTML entry points (`index.html`, `work.html`, `about.html`, etc.) that share assets and partials rather than using a static-site generator. Visual assets live under `images/`, reusable fonts and vendor scripts under `webfonts/`, `css/`, and `js/`, while downloadable content such as the résumé PDF is nested in `doc/` (`doc/CV/CV_Zihao_Eric_GUO.pdf`). Keep net-new media inside `assets/` to stay consistent with existing relative paths, and update `new_sitemap.xml` whenever you introduce or retire a page so search crawlers stay aligned.
+The root hosts individually crafted HTML entry points (`index.html`, `project.html`, `resume.html`, etc.) that share assets and partials rather than using a static-site generator. Visual assets live under `images/`, reusable fonts and vendor scripts under `webfonts/`, `css/`, and `js/`, while downloadable content such as the résumé PDF is nested in `doc/` (`doc/CV/CV_Zihao_Eric_GUO.pdf`). Keep net-new media inside `assets/` to stay consistent with existing relative paths, and update `new_sitemap.xml` whenever you introduce or retire a page so search crawlers stay aligned.
 
 ## Build, Test, and Development Commands
 - `python3 -m http.server 4000` — serves the repository root locally; navigate to `http://localhost:4000` to preview navigation, animations, and external links.

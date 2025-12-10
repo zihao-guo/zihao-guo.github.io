@@ -9,6 +9,7 @@ Remember to save the cv to: /doc/CV/CV_Zihao_Eric_GUO.pdf
 
 ## !!! ing  !!! 
 - [ ] Research interests
+- [ ] new aboutMe.html
 - [ ] To be revised: house price forecasting + RL + mathematical modeling
 
 

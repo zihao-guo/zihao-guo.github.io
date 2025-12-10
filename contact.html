@@ -173,42 +173,22 @@
                         <nav id="main-nav" class="main-nav">
                            <ul class="pl-0 mb-4 mb-lg-0">
                               <!-- ++++++++++++++++++++++++++++++++++++ -->
-                              <li >
-                                 <a href="index.html">
+                              <li>
+                                 <a href="aboutME.html">
                                  <span class=" btn-round btn-round-sm d-inline-block radius-2 shadow-h">
-                                 <i class="fa fa-home btn-icon-inner" ></i>
+                                 <i class="fa fa-user btn-icon-inner" ></i>
                                  </span>
-                                 <span class="font-weight-600  text-uppercase  d-block text-white">Home</span>
+                                 <span class="font-weight-600  text-uppercase  d-block text-white">About Me</span>
                                  </a>
                               </li>
-                              <!-- ++++++++++++++++++++++++++++++++++++ -->
                               <li>
-                                 <a class="" href="about.html">
-                                 <span class="  btn-round btn-round-sm d-inline-block radius-2 shadow-h">
-                                 <i class="fa fa-user btn-icon-inner " ></i>
-                                 </span>
-                                 <span class="font-weight-600 text-uppercase  d-block text-white">Resume</span>
-                                 </a>
-                              </li>
-                              <!-- ++++++++++++++++++++++++++++++++++++ -->
-                              <li>
-                                 <a class=" " href="research.html">
-                                 <span class=" btn-round btn-round-sm d-inline-block radius-2 shadow-h">
-                                 <i class="fa fa-comments btn-icon-inner" ></i>
-                                 </span>
-                                 <span class="font-weight-600  text-uppercase d-block text-white">Publication</span>
-                                 </a>
-                              </li>
-                              <!-- ++++++++++++++++++++++++++++++++++++ -->
-                              <li>
-                                 <a class="" href="work.html">
+                                 <a class="" href="project.html">
                                  <span class="btn-round btn-round-sm d-inline-block radius-2 shadow-h">
                                  <i class="fa fa-camera btn-icon-inner" ></i>
                                  </span>
                                  <span class="font-weight-600  text-uppercase  d-block text-white">Project</span>
                                  </a>
                               </li>
-                              <!-- ++++++++++++++++++++++++++++++++++++ -->
 
                               <li class="active current">
                                  <a class=" " href="contact.html">
@@ -254,25 +234,20 @@
                         <div class="col-lg-7 mb-5 mb-lg-0">
                            <div class="card card-lg border-0 shadow-lg">
                               <div class="card-body p-5">
-                                 <form>
+                                 <form id="contactForm">
                                     <div class="d-grid gap">
-                                    <div class="row">
-                                       <div class="col-sm-6 mb-4 mb-sm-0">
-                                             <label class="form-label">First name</label>
-                                             <input type="text" class="form-control" name="name" id="name" placeholder="Zihao / Eric" >
-                                       </div>
-                                       <div class="col-sm-6">
-                                             <label class="form-label">Last name</label>
-                                             <input type="text" class="form-control" name="lastName" id="lastName" placeholder="GUO">
-                                       </div>
+                                    <div class="mb-4">
+                                       <label class="form-label">How may I address you?</label>
+                                       <input type="text" class="form-control" name="name" id="name" placeholder="e.g. Dr. Lee, Eric, NBA scout, football scout, Hiring Manager">
                                     </div>
                                     
                                     <div>
                                        <label class="form-label">Message</label>
-                                       <textarea class="form-control" name="message" id="message" placeholder="Under construction, please feel free to contact me directly by clicking on my email (right) side or the buttom below, thanks!" rows="4"></textarea>
+                                       <textarea class="form-control" name="message" id="message" placeholder="Share project details, collaboration ideas, or anything else you'd like me to know." rows="4"></textarea>
                                     </div>
                                     <div class="d-grid">
-                                       <button type="submit" class="btn btn-primary send font-size-16"><a  class="text-muted" href="mailto:zihao-eric.guo@ip-paris.fr">Send message</a></button>
+                                       <button type="submit" class="btn btn-primary send font-size-16">Draft email</button>
+                                       <small class="text-muted mt-2" id="contactStatus"></small>
                                     </div>
                                  </div>
                                  </form>
@@ -358,6 +333,33 @@
       <script src="js/parallax.js"></script>
       <script src="js/jquery.easy-pie-chart.js"></script>
       <script src="js/script.js"></script>
+      <script>
+         document.addEventListener('DOMContentLoaded', function () {
+            var form = document.getElementById('contactForm');
+            var statusEl = document.getElementById('contactStatus');
+            var emailAddress = 'zihao-eric.guo@ip-paris.fr';
+            if (!form) return;
+            form.addEventListener('submit', function (event) {
+               event.preventDefault();
+               var nameInput = (document.getElementById('name').value || '').trim();
+               var message = (document.getElementById('message').value || '').trim();
+               var subjectLabel = nameInput ? nameInput : 'website visitor';
+               var subject = encodeURIComponent('Message from ' + subjectLabel);
+               var bodyLines = [];
+               if (message) {
+                  bodyLines.push(message);
+               } else {
+                  bodyLines.push('[Write your message here]');
+               }
+               bodyLines.push('', '— ' + (nameInput || 'Anonymous visitor'));
+               var body = encodeURIComponent(bodyLines.join('\n'));
+               window.location.href = 'mailto:' + emailAddress + '?subject=' + subject + '&body=' + body;
+               if (statusEl) {
+                  statusEl.textContent = 'Opening your email app… If nothing appears, copy and send manually to ' + emailAddress + '.';
+               }
+            });
+         });
+      </script>
       <!-- Google analytics -->
       <!-- End google analytics -->
    </body>
