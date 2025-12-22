@@ -1589,12 +1589,12 @@ a {
    border:0.0625rem solid rgba(22,218,157,0.2);
 }
 .resume-highlights--compact{
-   grid-template-columns:repeat(3,minmax(0,1fr));
+   grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
 }
 .highlight-value{
    display:block;
-   font-size:1.5rem;
-   font-weight:700;
+   font-size:1.15rem;
+   font-weight:600;
    color:#16da9d;
 }
 .highlight-label{
