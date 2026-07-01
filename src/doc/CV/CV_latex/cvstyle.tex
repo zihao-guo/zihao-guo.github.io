@@ -1,0 +1,137 @@
+% ============================================================
+%  cvstyle.tex -- shared preamble/macros for Zihao-Eric GUO's CV
+%  Recreates the two-column "sidebar + timeline" Word template
+%  used in CV_doc/*.docx (one page, A4).
+%  Included by CV_Zihao_EN.tex / CV_Zihao_FR.tex / CV_Zihao_CH.tex
+% ============================================================
+
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{carlito}                 % Calibri-metric-compatible font
+\renewcommand{\familydefault}{\sfdefault}
+
+\usepackage[paperwidth=210mm,paperheight=297mm,margin=0mm]{geometry}
+\usepackage[absolute,overlay]{textpos}
+\usepackage{eso-pic}
+\usepackage{tikz}
+\usetikzlibrary{shadows,shapes.geometric}
+\usepackage{xcolor}
+\usepackage{array}
+\usepackage{ragged2e}
+\usepackage{enumitem}
+\usepackage{fontawesome5}
+\usepackage{graphicx}
+\usepackage[hidelinks]{hyperref}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\renewcommand{\arraystretch}{1}
+
+% ---------------- colours (sampled from the original docx) ----------------
+\definecolor{cvblue}{HTML}{017BAA}   % banner / skill box / icon badges / bars
+\definecolor{cvbluedark}{HTML}{004F6E}
+\definecolor{cvgray}{HTML}{F3F3F3}   % sidebar + section-header bar
+\definecolor{cvlink}{HTML}{0563C1}   % hyperlink blue
+\definecolor{cvdot}{HTML}{0070C0}    % bullet / timeline rule blue
+\definecolor{cvrule}{HTML}{BFBFBF}   % timeline grey rule
+\definecolor{cvtext}{HTML}{000000}
+
+\hypersetup{colorlinks=true, urlcolor=cvlink, linkcolor=cvlink}
+
+% ---------------- text grid -------------------------------------------------
+\setlength{\TPHorizModule}{1mm}
+\setlength{\TPVertModule}{1mm}
+\textblockorigin{0mm}{0mm}
+
+% ---------------- layout dimensions -----------------------------------------
+\newlength{\sidew}    \setlength{\sidew}{61mm}    % sidebar width
+\newlength{\sidepad}  \setlength{\sidepad}{4mm}   % sidebar inner padding
+\newlength{\mainx}    \setlength{\mainx}{64mm}    % right column x-origin
+\newlength{\mainw}    \setlength{\mainw}{139mm}   % right column width
+
+\newlength{\sideinnerw}
+\setlength{\sideinnerw}{\sidew}
+\addtolength{\sideinnerw}{-2\sidepad}
+
+\newlength{\cvdatew}  \setlength{\cvdatew}{24mm}
+\newlength{\cvgutter} \setlength{\cvgutter}{4mm}
+\newlength{\cvcontw}
+\setlength{\cvcontw}{\mainw}
+\addtolength{\cvcontw}{-\cvdatew}
+\addtolength{\cvcontw}{-\cvgutter}
+
+% ---------------- full-bleed sidebar background -----------------------------
+\AddToShipoutPictureBG*{%
+  \begin{tikzpicture}[remember picture,overlay,x=1mm,y=-1mm]
+    \fill[cvgray] (0,0) rectangle (61,297);
+  \end{tikzpicture}%
+}
+
+% ---------------- generic helpers -------------------------------------------
+
+% small filled dot bullet (sidebar contact rows / language rows)
+\newcommand{\cvdotmark}{\textcolor{cvdot}{\Large\textbullet}}
+
+% language proficiency bar: #1 = fill fraction in [0,1]
+\newcommand{\langbar}[1]{%
+  \begin{tikzpicture}[x=1mm,y=1mm]
+    \def\w{45}\def\h{3.2}
+    \draw[black, line width=0.6pt, rounded corners=0.7pt] (0,0) rectangle (\w,\h);
+    \fill[cvblue] (0.18,0.18) rectangle ({#1*\w-0.18},{\h-0.18});
+  \end{tikzpicture}%
+}
+
+% sidebar section title (bold black, no bar)
+\newcommand{\sidetitle}[1]{%
+  \par\vspace{1mm}\textbf{\Large #1}\par\vspace{1.3mm}%
+}
+
+% compact sidebar education entry: #1=institution #2=dates/location #3=description
+\newcommand{\sideedu}[3]{%
+  \cvdotmark\ \textbf{\normalsize #1}\par\vspace{0.6mm}
+  {\footnotesize\textit{\textcolor{black!65}{#2}}}\par\vspace{0.6mm}
+  {\footnotesize\itshape #3}\par%
+}
+
+% section badge + heading bar for the main column
+% #1 = fontawesome icon command   #2 = heading text
+\newcommand{\cvsection}[2]{%
+  \par\vspace{6mm}\noindent%
+  \begin{tikzpicture}[baseline=-3.2mm,x=1mm,y=1mm]
+    \node[fill=cvblue, rounded corners=1.2pt, minimum width=8mm, minimum height=8mm, inner sep=0pt]
+      (badge) at (4,-4) {\textcolor{white}{\fontsize{11}{11}\selectfont #1}};
+    \fill[cvblue] (1.2,-7.6) -- (3,-8.6) -- (3,-7.6) -- cycle; % small tail
+  \end{tikzpicture}%
+  \hspace{1.5mm}%
+  \colorbox{cvgray}{\makebox[127mm][l]{\rule{0pt}{3.6mm}\textbf{\Large \MakeUppercase{#2}}}}%
+  \par\vspace{2.8mm}%
+}
+
+% timeline row: #1=date (bold)  #2=location (italic)  #3=main content
+\newcommand{\cvrow}[3]{%
+  \noindent
+  \begin{tabular}{@{}p{\cvdatew}!{\color{cvrule}\vrule width 0.8pt}p{\cvcontw}@{}}
+  \begin{minipage}[t]{\cvdatew}\raggedright\textbf{#1}\par\vspace{0.8mm}\textit{\textcolor{black!65}{#2}}\end{minipage}
+  & \hspace{3mm}\begin{minipage}[t]{\cvcontw}#3\end{minipage}\\
+  \end{tabular}\par\vspace{6mm}%
+}
+
+% continuation row (no date/location repeated, just the rule + content)
+\newcommand{\cvcont}[1]{%
+  \noindent
+  \begin{tabular}{@{}p{\cvdatew}!{\color{cvrule}\vrule width 0.8pt}p{\cvcontw}@{}}
+  \mbox{} & \hspace{3mm}\begin{minipage}[t]{\cvcontw}#1\end{minipage}\\
+  \end{tabular}\par%
+}
+
+\newcommand{\kw}[1]{\underline{\texttt{\footnotesize #1}}}
+
+\newcommand{\entrydate}[1]{\hspace{3mm plus 1fill}\textit{\underline{#1}}}
+
+\newlist{cvitemize}{itemize}{1}
+\setlist[cvitemize]{leftmargin=4mm, itemsep=0pt, topsep=1pt, parsep=0pt, label=\textbullet}
+
+\newlist{sideitemize}{itemize}{1}
+\setlist[sideitemize]{leftmargin=3mm, itemsep=0.5pt, topsep=1pt, parsep=0pt, label=\textbullet}
