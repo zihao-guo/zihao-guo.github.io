@@ -1,0 +1,136 @@
+\input{cvstyle.tex}
+
+\begin{document}
+
+% =========================== SIDEBAR (left) ===========================
+\begin{textblock*}{\sideinnerw}(\sidepad,6mm)
+\begin{minipage}[t]{\sideinnerw}
+\begin{tikzpicture}
+  \clip (0,0) circle (16mm);
+  \node[anchor=center] at (0,0) {\includegraphics[width=34mm]{assets/photo.jpg}};
+\end{tikzpicture}
+
+\vspace{4mm}
+{\LARGE\textbf{Zihao-Eric GUO}}\par
+\vspace{3.5mm}
+
+{\normalsize
+\faEnvelope\ \href{mailto:zihao-eric.guo@ip-paris.fr}{zihao-eric.guo@ip-paris.fr}\par\vspace{1.8mm}
+\faPhone\ +33 (0)765241550\par\vspace{1.8mm}
+\faMapMarker\ Paris, France\par\vspace{1.8mm}
+\faKaggle\ Kaggle Expert\par\vspace{1.8mm}
+\faHome\ \href{https://zihao-guo.github.io/}{Ma page perso}\par
+}
+
+\vspace{2mm}
+\sidetitle{FORMATION}
+\sideedu{Institut Polytechnique de Paris}{Depuis 11/2023 -- Paris, France}{Préservation des performances des graphes en environnement exogènement perturbé - Date de fin: \textbf{\underline{déc. 2026}}}
+\vspace{2mm}
+\sideedu{École Centrale de Nantes}{09/2021 -- 09/2023 -- Nantes, France}{Diplôme d'ingénieur généraliste - option maths appliquées}
+\vspace{2mm}
+\sideedu{Université de Picardie Jules Verne}{09/2017 -- 07/2021 -- Amiens, France}{Licence, optimisation}
+
+\vspace{2mm}
+\sidetitle{COMPÉTENCES IT}
+\tikz\node[fill=cvblue, text=white, rounded corners=2pt, text width=\sideinnerw-4mm, inner sep=2.2mm]{\normalsize Python (NumPy, Pandas, Sklearn, PyTorch, Plotly), R, C/C++, NoSQL, MATLAB, Power BI, Catia, CAD};
+
+\vspace{2mm}
+{\small\itshape\justifying Analyse hilbertienne, processus stochastiques, apprentissage statistique, méthodes bayésiennes, méthodes numériques probabilistes, bases de données, quantification d'incertitude, algorithmique, dynamique des fluides, data science, machine learning, optimisation, signaux et systèmes, éléments finis.\par}
+
+\vspace{2mm}
+\sidetitle{LANGUES}
+{\normalsize
+\cvdotmark\ \textbf{Chinois} : langue maternelle\par\vspace{1mm}
+\langbar{0.95}\par\vspace{2mm}
+\cvdotmark\ \textbf{Anglais} : courant (GRE 326)\par\vspace{1mm}
+\langbar{0.82}\par\vspace{2mm}
+\cvdotmark\ \textbf{Français} : courant (DALF C1)\par\vspace{1mm}
+\langbar{0.72}\par
+}
+
+\vspace{2mm}
+\sidetitle{INTÉRÊTS}
+\textcolor{cvblue}{\LARGE\faBookOpen\ \faBasketballBall\ \faFutbol\ \faKeyboard}\par
+
+\vspace{2mm}
+\sidetitle{Atouts}
+{\normalsize\itshape
+\begin{sideitemize}
+\item Esprit d'équipe ;
+\item Indépendance et adaptabilité ;
+\item Forte capacité d'apprentissage.
+\end{sideitemize}
+}
+\end{minipage}
+\end{textblock*}
+
+% =========================== MAIN COLUMN (right) ===========================
+\begin{textblock*}{\mainw}(\mainx,6mm)
+
+% ---- banner ----
+\begin{tikzpicture}[x=1mm,y=-1mm]
+  \node[fill=black!15, rounded corners=3pt, minimum width=139mm, minimum height=27mm, inner sep=0pt] at (70.7,14.8) {};
+  \shade[shading=axis, left color=cvblue, right color=cvbluedark, shading angle=-25,
+        rounded corners=3pt] (0,0) rectangle (139,27);
+  \node[anchor=north west, text=white, text width=95mm, align=left, inner sep=0pt] at (5,4)
+    {\faIdBadge\ Pré-doc à l'Institut Polytechnique de Paris\par\vspace{0.8mm}Intéressé: optimisation stochastique, programmation mathématique};
+  \node[anchor=north east, text=white] at (134,19.5)
+    {\large\textbf{Ingénieur IA | Ingénieur algorithmes | Data scientist}};
+  \node[fill=white, minimum width=8mm, minimum height=8mm, inner sep=0pt] at (113,7) {\href{https://www.linkedin.com/in/zihao-éric-g-850167211/}{\textcolor{cvblue}{\large\faLinkedin}}};
+  \node[fill=white, minimum width=8mm, minimum height=8mm, inner sep=0pt] at (124,7) {\href{https://github.com/zeio99}{\textcolor{black}{\large\faGithub}}};
+\end{tikzpicture}
+\vspace{-1mm}
+
+% ---- EXPÉRIENCE PRO ----
+\cvsection{\faFlag}{Expérience pro}
+
+\cvrow{2025}{Shanghai,\\ \textbf{\itshape Chine}}{%
+\textbf{Stage -- Ing. algorithmes (\href{https://www.huawei.com/fr/}{Huawei})}\entrydate{08/2025 -- 11/2025}\par
+{\normalsize\begin{cvitemize}
+\item Développement d'un cadre contrastif multimodal nuage de points-canal pour la prédiction du canal, avec un algorithme d'allocation non contiguë améliorant l'allocation continue RIV.
+\end{cvitemize}
+Mots-clés : \kw{apprentissage contrastif multimodal, optimisation}}}
+
+\cvrow{2023}{Cambridge,\\ \textbf{\itshape Royaume-Uni}}{%
+\textbf{Stage -- Assistant de recherche en biostatistique (\href{https://en.wikipedia.org/wiki/European_Bioinformatics_Institute}{EMBL-EBI})}\entrydate{04/2023 -- 09/2023}\par
+{\normalsize\begin{cvitemize}
+\item Sujet : « Simuler l'évolution des génomes sur de grands arbres phylogénétiques à branches courtes »
+\end{cvitemize}
+Mots-clés : \kw{R/Python, échantillonnage, cluster, bash(UNIX)}}}
+
+\cvrow{2022}{Paris,\\ \textbf{\itshape France}}{%
+\textbf{Stage -- Data Engineer (\href{https://www.ifpenergiesnouvelles.com/}{IFPEN})}\entrydate{04/2022 -- 08/2022}\par
+{\normalsize\begin{cvitemize}
+\item Analyse des données de validation des badges de trafic et création d'un tableau de bord.
+\item Comparaison des données issues du modèle de trafic (MATSim) pour analyser les erreurs.
+\item Utilisation de modèles temporels (Sarimax, NeuralProphet...) pour corriger les statistiques par prédiction.
+\end{cvitemize}
+Mots-clés : \kw{Django, HTML/CSS, MongoDB, Git, PyTorch, Statsmodels}}}
+
+% ---- RECHERCHE SCIENTIFIQUE ----
+\cvsection{\faTrophy}{Recherche scientifique}
+
+\cvrow{}{}{%
+\textbf{Recherche liée aux LLM}\entrydate{Depuis 2025}\par
+{\normalsize\begin{cvitemize}
+\item Développement d'\textbf{EvoHGS}, cadre guidé par LLM pour améliorer Hybrid Genetic Search Algorithme sur le VRP via une optimisation solver-in-the-loop.
+\item Adaptation de la pipeline MiniMind pour pratiquer un workflow LLM.
+\end{cvitemize}
+Mots-clés : \kw{C++, fine-tuning supervisé, LoRA, GRPO}}}
+
+\cvrow{Oct.22 - Apr.23}{Nantes, France}{%
+\textbf{Recherche - Apprentissage multitâche pour les réseaux bayésiens}\entrydate{Laboratoire des Sciences du Numérique de Nantes (LS2N)}\par
+{\normalsize Mots-clés : \kw{C++, réseaux bayésiens, transfert d'apprentissage}}\par
+\textbf{Recherche - Théorie des valeurs extrêmes et applications environnementales}\entrydate{École Centrale de Nantes (ECN)}\par
+{\normalsize Mots-clés : \kw{modélisation statistique}}}
+
+\cvcont{%
+\textbf{Article - Classification de textes CNN par recuit simulé}\entrydate{\textit{ACM - International Conference Proceeding Series (ISBN: 978-1-4503-8432-2)}}\par
+\textbf{Article - Accessibilité du rail urbain via refonte du réseau de bus}\entrydate{\textit{Transportation Research Board (TRB) 104th Annual Meeting}}\par
+\textbf{Article - Variations de taux et erreurs récurrentes en phylogénétique}\entrydate{\textit{Nature Methods}}\par
+\vspace{1.5mm}
+\centerline{\small Voir plus de publications sur mon \href{https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=gMy-9XEAAAAJ}{Google Scholar profile}.}}
+
+\end{textblock*}
+
+\end{document}
