@@ -3,56 +3,55 @@
 \begin{document}
 
 % =========================== SIDEBAR (left) ===========================
-\begin{textblock*}{\sideinnerw}(\sidepad,6mm)
+\begin{textblock*}{\sideinnerw}(\sidepad,3mm)
 \begin{minipage}[t]{\sideinnerw}
+{\centering
 \begin{tikzpicture}
   \clip (0,0) circle (16mm);
   \node[anchor=center] at (0,0) {\includegraphics[width=34mm]{assets/photo.jpg}};
 \end{tikzpicture}
+\par}
 
-\vspace{4mm}
-{\LARGE\textbf{Zihao-Eric GUO}}\par
-\vspace{3.5mm}
+\vspace{2mm}
+{\centering{\LARGE\textbf{Zihao-Eric GUO}}\par}
+\vspace{2mm}
 
 {\normalsize
-\faEnvelope\ \href{mailto:zihao-eric.guo@ip-paris.fr}{zihao-eric.guo@ip-paris.fr}\par\vspace{1.8mm}
-\faPhone\ +33 (0)765241550\par\vspace{1.8mm}
-\faMapMarker\ Paris, France\par\vspace{1.8mm}
-\faKaggle\ Kaggle Expert\par\vspace{1.8mm}
+\faEnvelope\ \href{mailto:zihao-eric.guo@ip-paris.fr}{zihao-eric.guo@ip-paris.fr}\par\vspace{1mm}
+\faPhone\ +33 (0)765241550\par\vspace{1mm}
+\faMapMarker\ Paris, France\par\vspace{1mm}
+\faTrophy\ Kaggle Expert\par\vspace{1mm}
 \faHome\ \href{https://zihao-guo.github.io/}{Welcome to my homepage}\par
 }
 
-\vspace{2mm}
+\vspace{3mm}
 \sidetitle{EDUCATION}
-\sideedu{Institut Polytechnique de Paris}{Since 11/2023 -- Paris, France}{Preserving graph performance in an exogenously perturbed environment - Expected graduation date: \textbf{\underline{Dec.2026}}}
-\vspace{2mm}
-\sideedu{École Centrale de Nantes}{09/2021 -- 09/2023 -- Nantes, France}{Generalist Engineer Degree - Applied Mathematics Options}
-\vspace{2mm}
-\sideedu{Université de Picardie Jules Verne}{09/2017 -- 07/2021 -- Amiens, France}{Bachelor of Science, Optimization}
+\sideedu{Institut Polytechnique de Paris (\href{https://www.ip-paris.fr/}{IPP})}{Since 11/2023 -- Paris, France}{Preserving graph performance in an exogenously perturbed environment - Expected graduation date: \textbf{\underline{Dec.2026}}}
+\vspace{1.5mm}
+\sideedu{École Centrale de Nantes (\href{https://www.ec-nantes.fr/english-version}{ECN})}{09/2021 -- 09/2023 -- Nantes, France}{Generalist Engineer Degree (\textbf{MSc}) - Applied Mathematics Options}
+\vspace{1.5mm}
+\sideedu{Université de Picardie Jules Verne (\href{https://www.u-picardie.fr/}{UPJV})}{09/2017 -- 07/2021 -- Amiens, France}{Bachelor of Science (\textbf{BSc}), Optimization}
 
-\vspace{2mm}
+\vspace{3mm}
 \sidetitle{IT SKILLS}
-\tikz\node[fill=cvblue, text=white, rounded corners=2pt, text width=\sideinnerw-4mm, inner sep=2.2mm]{\normalsize Python (NumPy, Pandas, Sklearn, PyTorch, Plotly), R, C/C++, NoSQL, MATLAB, Power BI, Catia, CAD};
+\tikz\node[fill=cvblue, text=white, rounded corners=2pt, text width=\sideinnerw-4mm, inner sep=2.2mm]{\small Python, R, C/C++, NoSQL, MATLAB, Power BI, Gurobi/Cplex, \mbox{CUDA (vibe coding)}};
 
-\vspace{2mm}
-{\small\itshape\justifying Hilbertian analysis, Stochastic Process, statistical learning, Bayesian methods and hierarchical models, Probabilistic numerical methods, Databases, Uncertainty Quantification, Algorithms \& Programming, Physics and Fluid Dynamics, Data Science \& Machine Learning, Optimization, Signal and Systems, Finite Elements.\par}
-
-\vspace{2mm}
+\vspace{3mm}
 \sidetitle{LANGUAGES}
-{\normalsize
-\cvdotmark\ \textbf{Chinese}: Native language\par\vspace{1mm}
-\langbar{0.95}\par\vspace{2mm}
-\cvdotmark\ \textbf{English}: Fluent (GRE 326)\par\vspace{1mm}
-\langbar{0.82}\par\vspace{2mm}
-\cvdotmark\ \textbf{French}: Fluent (DALF C1)\par\vspace{1mm}
+{\centering\normalsize
+\cvdotmark\ \textbf{Chinese}: Native language\par\vspace{0.6mm}
+\langbar{0.95}\par\vspace{1mm}
+\cvdotmark\ \textbf{English}: Fluent (GRE 326)\par\vspace{0.6mm}
+\langbar{0.82}\par\vspace{1mm}
+\cvdotmark\ \textbf{French}: Fluent (DALF C1)\par\vspace{0.6mm}
 \langbar{0.72}\par
 }
 
-\vspace{2mm}
+\vspace{3mm}
 \sidetitle{INTERESTS}
-\textcolor{cvblue}{\LARGE\faBookOpen\ \faBasketballBall\ \faFutbol\ \faKeyboard}\par
+{\centering\textcolor{cvblue}{\LARGE\faBookOpen\ \faBasketballBall\ \faFutbol}\ \cvflower\par}
 
-\vspace{2mm}
+\vspace{3mm}
 \sidetitle{Aces}
 {\normalsize\itshape
 \begin{sideitemize}
@@ -65,71 +64,85 @@
 \end{textblock*}
 
 % =========================== MAIN COLUMN (right) ===========================
-\begin{textblock*}{\mainw}(\mainx,6mm)
+\begin{textblock*}{\mainw}(\mainx,3mm)
 
 % ---- banner ----
 \begin{tikzpicture}[x=1mm,y=-1mm]
-  \node[fill=black!15, rounded corners=3pt, minimum width=139mm, minimum height=27mm, inner sep=0pt] at (70.7,14.8) {};
+  \node[fill=black!15, rounded corners=3pt, minimum width=143mm, minimum height=27mm, inner sep=0pt] at (71.5,14.8) {};
   \shade[shading=axis, left color=cvblue, right color=cvbluedark, shading angle=-25,
-        rounded corners=3pt] (0,0) rectangle (139,27);
+        rounded corners=3pt] (0,0) rectangle (143,27);
   \node[anchor=north west, text=white, text width=95mm, align=left, inner sep=0pt] at (5,4)
     {\faIdBadge\ Pre-Doc @ Institut Polytechnique de Paris\par\vspace{0.8mm}Interested in: Stochastic Optimization, Math Programming};
-  \node[anchor=north east, text=white] at (134,19.5)
+  \node[anchor=north east, text=white] at (138,19.5)
     {\large\textbf{AI Engineer | Algorithm Engineer | Data Scientist}};
-  \node[fill=white, minimum width=8mm, minimum height=8mm, inner sep=0pt] at (113,7) {\href{https://www.linkedin.com/in/zihao-éric-g-850167211/}{\textcolor{cvblue}{\large\faLinkedin}}};
-  \node[fill=white, minimum width=8mm, minimum height=8mm, inner sep=0pt] at (124,7) {\href{https://github.com/zeio99}{\textcolor{black}{\large\faGithub}}};
+  \node[fill=white, minimum width=8mm, minimum height=8mm, inner sep=0pt] at (117,7) {\href{https://www.linkedin.com/in/zihao-éric-g-850167211/}{\textcolor{cvblue}{\large\faLinkedin}}};
+  \node[fill=white, minimum width=8mm, minimum height=8mm, inner sep=0pt] at (128,7) {\href{https://github.com/zeio99}{\textcolor{black}{\large\faGithub}}};
 \end{tikzpicture}
-\vspace{-1mm}
+\vspace{-2mm}
+\fontsize{12}{14.5}\selectfont
 
 % ---- INDUSTRIAL EXPERIENCE ----
 \cvsection{\faFlag}{Industrial Experience}
 
 \cvrow{2025}{Shanghai,\\ \textbf{\itshape CHINA}}{%
-\textbf{Internship -- Algorithm Engineer (\href{https://www.huawei.com/fr/}{Huawei})}\entrydate{08/2025 -- 11/2025}\par
-{\normalsize\begin{cvitemize}
+\textbf{Internship -- Algorithm Engineer (\href{https://www.huawei.com/fr/}{Huawei})}\par
+{\normalsize\itshape\textcolor{black!65}{08/2025 -- 11/2025}}\par
+\begin{cvitemize}
 \item Developed a point cloud--channel multimodal contrastive learning framework for accurate channel prediction and proposed an integer-partitioning-based non-contiguous resource allocation algorithm improving RIV continuous allocation.
 \end{cvitemize}
-Keywords: \kw{Multimodal contrastive learning, Optimization}}}
+Keywords: \kw{Multimodal contrastive learning, Optimization}}
 
 \cvrow{2023}{Cambridge,\\ \textbf{\itshape UK}}{%
-\textbf{Internship -- Biostatistics Researcher Intern (\href{https://en.wikipedia.org/wiki/European_Bioinformatics_Institute}{EMBL-EBI})}\entrydate{04/2023 -- 09/2023}\par
-{\normalsize\begin{cvitemize}
+\textbf{Internship -- Biostatistics Researcher Intern (\href{https://en.wikipedia.org/wiki/European_Bioinformatics_Institute}{EMBL-EBI})}\par
+{\normalsize\itshape\textcolor{black!65}{04/2023 -- 09/2023}}\par
+\begin{cvitemize}
 \item The research topic is ``Simulating the evolution of genomes along large, short-branch phylogenetic trees''
 \end{cvitemize}
-Keywords: \kw{R/Python, Sampling algorithm, Cluster, bash(UNIX)}}}
+Keywords: \kw{R/Python, Sampling algorithm, Cluster, bash(UNIX)}}
 
 \cvrow{2022}{Paris,\\ \textbf{\itshape France}}{%
-\textbf{Internship -- Data Engineer (\href{https://www.ifpenergiesnouvelles.com/}{IFPEN})}\entrydate{04/2022 -- 08/2022}\par
-{\normalsize\begin{cvitemize}
+\textbf{Internship -- Data Engineer (\href{https://www.ifpenergiesnouvelles.com/}{IFPEN})}\par
+{\normalsize\itshape\textcolor{black!65}{04/2022 -- 08/2022}}\par
+\begin{cvitemize}
 \item Analysis of traffic badge validation data and create a dashboard.
 \item Comparison of data obtained from a traffic model (MATSim) to explore errors.
 \item Using time series models (Sarimax, Neuralprophet...) to analyze the impact of influencing factors and correct the statistics by predicting the data.
 \end{cvitemize}
-Keywords: \kw{Django, HTML/CSS, MongoDB, Git, Pytorch, Statsmodels}}}
+Keywords: \kw{Django, HTML/CSS, MongoDB, Git, Pytorch, Statsmodels}}
 
 % ---- SCIENTIFIC RESEARCH EXPERIENCE ----
 \cvsection{\faTrophy}{Scientific Research Experience}
 
-\cvrow{}{}{%
+\cvsubtitle{Selected Publication}
+\cvfull{%
+\textbf{CNN text classification method based on simulated annealing method}\par
+{\normalsize\itshape\textcolor{black!65}{ACM - International Conference Proceeding Series (ISBN: 978-1-4503-8432-2)}}\par
+\vspace{1mm}
+\textbf{Restoring Accessibility During Urban Rail Disruptions via Bus Network Redesign}\par
+{\normalsize\itshape\textcolor{black!65}{Transportation Research Board (TRB) 104th Annual Meeting}}\par
+\vspace{1mm}
+\textbf{Rate variation and recurrent sequence errors in pandemic-scale phylogenetics}\par
+{\normalsize\itshape\textcolor{black!65}{Nature Methods}}\par
+\vspace{1.5mm}
+\centerline{\normalsize For more publications, please visit my \href{https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=gMy-9XEAAAAJ}{Google Scholar profile}.}}
+
+\cvsubtitle{Research}
+\cvfull{%
+\textbf{Multi-task learning for Bayesian Networks}\par
+{\normalsize\itshape\textcolor{black!65}{Oct. 2022 -- Apr. 2023, Nantes, France -- Nantes Digital Science Laboratory (LS2N)}}\par
+Keywords: \kw{C++, Linux, Bayesian Networks, Transfer learning}
+\vspace{2mm}
+\par\textbf{Extreme value theory with environmental applications}\par
+{\normalsize\itshape\textcolor{black!65}{Oct. 2022 -- Apr. 2023, Nantes, France -- École Centrale de Nantes (ECN)}}\par
+Keywords: \kw{Statistical Modeling, MATLAB}}
+
+\cvfull{%
 \textbf{LLM-related Research}\entrydate{Since 2025}\par
-{\normalsize\begin{cvitemize}
+\begin{cvitemize}
 \item Developed \textbf{EvoHGS}, an LLM-guided framework for improving Hybrid Genetic Search on vehicle routing problems through solver-in-the-loop optimization.
 \item Followed and customized the MiniMind pipeline to practice the full lightweight LLM workflow.
 \end{cvitemize}
-Keywords: \kw{C++, Supervised Fine-Tuning, LoRA, GRPO}}}
-
-\cvrow{Oct.22 - Apr.23}{Nantes, France}{%
-\textbf{Research - Multi-task learning for Bayesian Networks}\entrydate{Nantes Digital Science Laboratory (LS2N)}\par
-{\normalsize Keywords: \kw{C++, Linux, Bayesian Networks, Transfer learning}}\par
-\textbf{Research - Extreme value theory with environmental applications}\entrydate{École Centrale de Nantes (ECN)}\par
-{\normalsize Keywords: \kw{Statistical Modeling}}}
-
-\cvcont{%
-\textbf{Essay - CNN text classification method based on simulated annealing method}\entrydate{\textit{ACM - International Conference Proceeding Series (ISBN: 978-1-4503-8432-2)}}\par
-\textbf{Essay - Restoring Accessibility During Urban Rail Disruptions via Bus Network Redesign}\entrydate{\textit{Transportation Research Board (TRB) 104th Annual Meeting}}\par
-\textbf{Essay - Rate variation and recurrent sequence errors in pandemic-scale phylogenetics}\entrydate{\textit{Nature Methods}}\par
-\vspace{1.5mm}
-\centerline{\small For more publications, please visit my \href{https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=gMy-9XEAAAAJ}{Google Scholar profile}.}}
+Keywords: \kw{C++, Supervised Fine-Tuning, LoRA, GRPO}}
 
 \end{textblock*}
 
