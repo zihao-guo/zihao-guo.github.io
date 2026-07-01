@@ -5,7 +5,7 @@
 %  Included by CV_Zihao_EN.tex / CV_Zihao_FR.tex / CV_Zihao_CH.tex
 % ============================================================
 
-\documentclass[10pt,a4paper]{article}
+\documentclass[11pt,a4paper]{article}
 
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
@@ -32,7 +32,7 @@
 % ---------------- colours (sampled from the original docx) ----------------
 \definecolor{cvblue}{HTML}{017BAA}   % banner / skill box / icon badges / bars
 \definecolor{cvbluedark}{HTML}{004F6E}
-\definecolor{cvgray}{HTML}{F3F3F3}   % sidebar + section-header bar
+\definecolor{cvgray}{HTML}{E8E8E8}   % sidebar + section-header bar
 \definecolor{cvlink}{HTML}{0563C1}   % hyperlink blue
 \definecolor{cvdot}{HTML}{0070C0}    % bullet / timeline rule blue
 \definecolor{cvrule}{HTML}{BFBFBF}   % timeline grey rule
@@ -49,7 +49,7 @@
 \newlength{\sidew}    \setlength{\sidew}{61mm}    % sidebar width
 \newlength{\sidepad}  \setlength{\sidepad}{4mm}   % sidebar inner padding
 \newlength{\mainx}    \setlength{\mainx}{64mm}    % right column x-origin
-\newlength{\mainw}    \setlength{\mainw}{139mm}   % right column width
+\newlength{\mainw}    \setlength{\mainw}{143mm}   % right column width (leaves a 3mm right margin, matching the top/bottom margin)
 
 \newlength{\sideinnerw}
 \setlength{\sideinnerw}{\sidew}
@@ -61,12 +61,16 @@
 \setlength{\cvcontw}{\mainw}
 \addtolength{\cvcontw}{-\cvdatew}
 \addtolength{\cvcontw}{-\cvgutter}
+% actual usable width inside the second table column of \cvrow/\cvcont: the column
+% itself is \cvcontw wide, but its content is prefixed with a 3mm \hspace, so the
+% inner minipage must be 3mm narrower or it silently overflows past the column
+\newlength{\cvcontinnerw}
+\setlength{\cvcontinnerw}{\cvcontw}
+\addtolength{\cvcontinnerw}{-3mm}
 
-% ---------------- full-bleed sidebar background -----------------------------
-\AddToShipoutPictureBG*{%
-  \begin{tikzpicture}[remember picture,overlay,x=1mm,y=-1mm]
-    \fill[cvgray] (0,0) rectangle (61,297);
-  \end{tikzpicture}%
+% ---------------- sidebar background (inset by the same 3mm top/bottom margin as the content) ---
+\AddToShipoutPictureBG{%
+  \put(0,3mm){\color{cvgray}\rule{61mm}{291mm}}%
 }
 
 % ---------------- generic helpers -------------------------------------------
@@ -83,30 +87,42 @@
   \end{tikzpicture}%
 }
 
-% sidebar section title (bold black, no bar)
+% hand-drawn flower icon (fontawesome5 free has no true flower glyph)
+\newcommand{\cvflower}{%
+  \begin{tikzpicture}[baseline=-0.9ex]
+    \foreach \ang in {0,60,120,180,240,300}{
+      \begin{scope}[rotate=\ang]
+        \fill[cvblue] (1.7mm,0) ellipse (1.9mm and 1.1mm);
+      \end{scope}
+    }
+    \fill[cvblue!55!black] (0,0) circle (1.1mm);
+  \end{tikzpicture}%
+}
+
+% sidebar section title (bold black, no bar, centered)
 \newcommand{\sidetitle}[1]{%
-  \par\vspace{1mm}\textbf{\Large #1}\par\vspace{1.3mm}%
+  \par\vspace{0.8mm}{\centering\textbf{\Large #1}\par}\vspace{0.8mm}%
 }
 
 % compact sidebar education entry: #1=institution #2=dates/location #3=description
 \newcommand{\sideedu}[3]{%
-  \cvdotmark\ \textbf{\normalsize #1}\par\vspace{0.6mm}
-  {\footnotesize\textit{\textcolor{black!65}{#2}}}\par\vspace{0.6mm}
-  {\footnotesize\itshape #3}\par%
+  \cvdotmark\ \textbf{\large #1}\par\vspace{0.4mm}
+  {\normalsize\textit{\textcolor{black!65}{#2}}}\par\vspace{0.4mm}
+  {\normalsize\itshape #3}\par%
 }
 
 % section badge + heading bar for the main column
 % #1 = fontawesome icon command   #2 = heading text
 \newcommand{\cvsection}[2]{%
-  \par\vspace{6mm}\noindent%
+  \par\vspace{1mm}\noindent%
   \begin{tikzpicture}[baseline=-3.2mm,x=1mm,y=1mm]
     \node[fill=cvblue, rounded corners=1.2pt, minimum width=8mm, minimum height=8mm, inner sep=0pt]
       (badge) at (4,-4) {\textcolor{white}{\fontsize{11}{11}\selectfont #1}};
     \fill[cvblue] (1.2,-7.6) -- (3,-8.6) -- (3,-7.6) -- cycle; % small tail
   \end{tikzpicture}%
   \hspace{1.5mm}%
-  \colorbox{cvgray}{\makebox[127mm][l]{\rule{0pt}{3.6mm}\textbf{\Large \MakeUppercase{#2}}}}%
-  \par\vspace{2.8mm}%
+  \colorbox{cvgray}{\makebox[131mm][l]{\rule{0pt}{3.6mm}\textbf{\Large \MakeUppercase{#2}}}}%
+  \par\vspace{1mm}%
 }
 
 % timeline row: #1=date (bold)  #2=location (italic)  #3=main content
@@ -114,19 +130,29 @@
   \noindent
   \begin{tabular}{@{}p{\cvdatew}!{\color{cvrule}\vrule width 0.8pt}p{\cvcontw}@{}}
   \begin{minipage}[t]{\cvdatew}\raggedright\textbf{#1}\par\vspace{0.8mm}\textit{\textcolor{black!65}{#2}}\end{minipage}
-  & \hspace{3mm}\begin{minipage}[t]{\cvcontw}#3\end{minipage}\\
-  \end{tabular}\par\vspace{6mm}%
+  & \hspace{3mm}\begin{minipage}[t]{\cvcontinnerw}#3\end{minipage}\\
+  \end{tabular}\par\vspace{1.5mm}%
 }
 
 % continuation row (no date/location repeated, just the rule + content)
 \newcommand{\cvcont}[1]{%
   \noindent
   \begin{tabular}{@{}p{\cvdatew}!{\color{cvrule}\vrule width 0.8pt}p{\cvcontw}@{}}
-  \mbox{} & \hspace{3mm}\begin{minipage}[t]{\cvcontw}#1\end{minipage}\\
+  \mbox{} & \hspace{3mm}\begin{minipage}[t]{\cvcontinnerw}#1\end{minipage}\\
   \end{tabular}\par%
 }
 
-\newcommand{\kw}[1]{\underline{\texttt{\footnotesize #1}}}
+% full-width row: no date column, no vertical rule -- content spans the whole main column
+\newcommand{\cvfull}[1]{%
+  \noindent\begin{minipage}[t]{\mainw}#1\end{minipage}\par\vspace{1.5mm}%
+}
+
+% subsection label inside a \cvsection block (e.g. "Research", "Publications")
+\newcommand{\cvsubtitle}[1]{%
+  \par\vspace{0.3mm}\textbf{\large\textcolor{cvbluedark}{#1}}\par\vspace{0.6mm}%
+}
+
+\newcommand{\kw}[1]{\underline{\small #1}}
 
 \newcommand{\entrydate}[1]{\hspace{3mm plus 1fill}\textit{\underline{#1}}}
 
