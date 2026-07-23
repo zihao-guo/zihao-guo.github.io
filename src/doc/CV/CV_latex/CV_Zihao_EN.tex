@@ -19,7 +19,7 @@
 {\normalsize
 \faEnvelope\ \href{mailto:zihao-eric.guo@ip-paris.fr}{zihao-eric.guo@ip-paris.fr}\par\vspace{1mm}
 \faPhone\ +33 (0)765241550\par\vspace{1mm}
-\faMapMarker\ Paris, France\par\vspace{1mm}
+\faMapMarker\ Châtenay-Malabry, France\par\vspace{1mm}
 \faTrophy\ Kaggle Expert\par\vspace{1mm}
 \faHome\ \href{https://zihao-guo.github.io/}{Welcome to my homepage}\par
 }
@@ -34,7 +34,7 @@
 
 \vspace{3mm}
 \sidetitle{IT SKILLS}
-\tikz\node[fill=cvblue, text=white, rounded corners=2pt, text width=\sideinnerw-4mm, inner sep=2.2mm]{\small Python, R, C/C++, NoSQL, MATLAB, Power BI, Gurobi/Cplex, \mbox{CUDA (vibe coding)}};
+\tikz\node[fill=cvblue, text=white, rounded corners=2pt, text width=\sideinnerw-4mm, inner sep=2.2mm]{\small Python, SQL, R, PyTorch, Power BI, Bash, C/C++, NoSQL, Gurobi/CPLEX};
 
 \vspace{3mm}
 \sidetitle{LANGUAGES}
@@ -52,12 +52,12 @@
 {\centering\textcolor{cvblue}{\LARGE\faBookOpen\ \faBasketballBall\ \faFutbol}\ \cvflower\par}
 
 \vspace{3mm}
-\sidetitle{Aces}
+\sidetitle{STRENGTHS}
 {\normalsize\itshape
 \begin{sideitemize}
-\item Team spirit;
-\item independence and adaptability;
-\item High learning capacity.
+\item Teamwork;
+\item Autonomy and adaptability;
+\item Strong learning ability.
 \end{sideitemize}
 }
 \end{minipage}
@@ -72,9 +72,9 @@
   \shade[shading=axis, left color=cvblue, right color=cvbluedark, shading angle=-25,
         rounded corners=3pt] (0,0) rectangle (143,27);
   \node[anchor=north west, text=white, text width=95mm, align=left, inner sep=0pt] at (5,4)
-    {\faIdBadge\ Pre-Doc @ Institut Polytechnique de Paris\par\vspace{0.8mm}Interested in: Stochastic Optimization, Math Programming};
+    {\faIdBadge\ Pre-Doc | Seeking a first permanent position\par\vspace{0.8mm}Focus: optimization, machine learning, generative AI};
   \node[anchor=north east, text=white] at (138,19.5)
-    {\large\textbf{AI Engineer | Algorithm Engineer | Data Scientist}};
+    {\large\textbf{Data Scientist | AI Engineer | Algorithm Engineer}};
   \node[fill=white, minimum width=8mm, minimum height=8mm, inner sep=0pt] at (117,7) {\href{https://www.linkedin.com/in/zihao-éric-g-850167211/}{\textcolor{cvblue}{\large\faLinkedin}}};
   \node[fill=white, minimum width=8mm, minimum height=8mm, inner sep=0pt] at (128,7) {\href{https://github.com/zeio99}{\textcolor{black}{\large\faGithub}}};
 \end{tikzpicture}
@@ -88,61 +88,63 @@
 \textbf{Internship -- Algorithm Engineer (\href{https://www.huawei.com/fr/}{Huawei})}\par
 {\normalsize\itshape\textcolor{black!65}{08/2025 -- 11/2025}}\par
 \begin{cvitemize}
-\item Developed a point cloud--channel multimodal contrastive learning framework for accurate channel prediction and proposed an integer-partitioning-based non-contiguous resource allocation algorithm improving RIV continuous allocation.
+\item Developed a predictive model based on multimodal contrastive learning, combining two data modalities: 3D point clouds and channel data.
+\item Designed a non-contiguous resource-allocation optimization algorithm and evaluated it against the RIV reference approach.
 \end{cvitemize}
-Keywords: \kw{Multimodal contrastive learning, Optimization}}
+}
 
 \cvrow{2023}{Cambridge,\\ \textbf{\itshape UK}}{%
 \textbf{Internship -- Biostatistics Researcher Intern (\href{https://en.wikipedia.org/wiki/European_Bioinformatics_Institute}{EMBL-EBI})}\par
 {\normalsize\itshape\textcolor{black!65}{04/2023 -- 09/2023}}\par
 \begin{cvitemize}
-\item The research topic is ``Simulating the evolution of genomes along large, short-branch phylogenetic trees''
+\item Contributed to a maximum-likelihood phylogenetic algorithm for up to 500,000 genomes and developed an automated Python/R/Bash simulation and cluster-benchmarking pipeline.
+\item Benchmarked topological accuracy, likelihood, runtime and memory over 10 replicates per configuration, demonstrating a speedup of over 100x versus the reference method.
 \end{cvitemize}
-Keywords: \kw{R/Python, Sampling algorithm, Cluster, bash(UNIX)}}
+}
 
 \cvrow{2022}{Paris,\\ \textbf{\itshape France}}{%
 \textbf{Internship -- Data Engineer (\href{https://www.ifpenergiesnouvelles.com/}{IFPEN})}\par
 {\normalsize\itshape\textcolor{black!65}{04/2022 -- 08/2022}}\par
 \begin{cvitemize}
-\item Analysis of traffic badge validation data and create a dashboard.
-\item Comparison of data obtained from a traffic model (MATSim) to explore errors.
-\item Using time series models (Sarimax, Neuralprophet...) to analyze the impact of influencing factors and correct the statistics by predicting the data.
+\item Analyzed public-transport validations and built a KPI dashboard.
+\item Compared MATSim with observations to identify discrepancies.
+\item Applied SARIMAX and NeuralProphet forecasting to analyze drivers and correct statistics.
 \end{cvitemize}
-Keywords: \kw{Django, HTML/CSS, MongoDB, Git, Pytorch, Statsmodels}}
+}
+
+\cvrow{2021}{Nantes,\\ \textbf{\itshape France}\\ {\itshape remote}}{%
+\textbf{Project - Data Analyst (\href{https://www.tencent.com/}{Tencent})}\par
+{\normalsize\itshape\textcolor{black!65}{11/2021 -- 01/2022}}\par
+\begin{cvitemize}
+\item Built a scikit-learn churn classifier to support retention and win-back strategies.
+\item Evaluated it with ROC-AUC and tuned hyperparameters using GridSearchCV.
+\end{cvitemize}
+}
 
 % ---- SCIENTIFIC RESEARCH EXPERIENCE ----
 \cvsection{\faTrophy}{Scientific Research Experience}
 
-\cvsubtitle{Selected Publication}
+\cvsubtitle{Selected Publications\hfill{\normalsize\mdseries\textcolor{black!65}{(For more publications, please visit my \href{https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=gMy-9XEAAAAJ}{Google Scholar profile}.)}}}
 \cvfull{%
-\textbf{CNN text classification method based on simulated annealing method}\par
-{\normalsize\itshape\textcolor{black!65}{ACM - International Conference Proceeding Series (ISBN: 978-1-4503-8432-2)}}\par
-\vspace{1mm}
-\textbf{Restoring Accessibility During Urban Rail Disruptions via Bus Network Redesign}\par
-{\normalsize\itshape\textcolor{black!65}{Transportation Research Board (TRB) 104th Annual Meeting}}\par
-\vspace{1mm}
-\textbf{Rate variation and recurrent sequence errors in pandemic-scale phylogenetics}\par
-{\normalsize\itshape\textcolor{black!65}{Nature Methods}}\par
-\vspace{1.5mm}
-\centerline{\normalsize For more publications, please visit my \href{https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=gMy-9XEAAAAJ}{Google Scholar profile}.}}
+\textbf{CNN text classification method based on simulated annealing method} \textcolor{black!65}{\textit{(ACM International Conference Proceeding Series)}}\par
+\textbf{Rate variation and recurrent sequence errors in pandemic-scale phylogenetics} \textcolor{black!65}{\textit{(Nature Methods)}}}
 
-\cvsubtitle{Research}
+\vspace{-1.2mm}
+{\color{black!25}\hrule width 0.5\mainw height 0.2pt}
+\vspace{1mm}
+
 \cvfull{%
-\textbf{Multi-task learning for Bayesian Networks}\par
-{\normalsize\itshape\textcolor{black!65}{Oct. 2022 -- Apr. 2023, Nantes, France -- Nantes Digital Science Laboratory (LS2N)}}\par
-Keywords: \kw{C++, Linux, Bayesian Networks, Transfer learning}
-\vspace{2mm}
-\par\textbf{Extreme value theory with environmental applications}\par
-{\normalsize\itshape\textcolor{black!65}{Oct. 2022 -- Apr. 2023, Nantes, France -- École Centrale de Nantes (ECN)}}\par
-Keywords: \kw{Statistical Modeling, MATLAB}}
+\textbf{Multi-task learning for Bayesian Networks}\entrydate{Oct. 2022 -- Apr. 2023}\par
+{\normalsize\itshape\textcolor{black!65}{Nantes, France -- Nantes Digital Science Laboratory (LS2N)}}\par
+Keywords: \kw{C++, Bayesian Networks, Transfer learning}}
 
 \cvfull{%
 \textbf{LLM-related Research}\entrydate{Since 2025}\par
 \begin{cvitemize}
-\item Developed \textbf{EvoHGS}, an LLM-guided framework for improving Hybrid Genetic Search on vehicle routing problems through solver-in-the-loop optimization.
-\item Followed and customized the MiniMind pipeline to practice the full lightweight LLM workflow.
+\item Developed \textbf{EvoHGS}, an LLM framework for Hybrid Genetic Search on VRPs; its fine-tuned 8B model outperformed GPT-5 nano (estimated 2B parameters) and achieved SOTA results.
+\item Adapted the MiniMind pipeline to experiment with an end-to-end lightweight LLM workflow.
 \end{cvitemize}
-Keywords: \kw{C++, Supervised Fine-Tuning, LoRA, GRPO}}
+Keywords: \kw{C++, Reinforcement fine-tuning (RFT), Supervised Fine-Tuning, LoRA, GRPO}}
 
 \end{textblock*}
 
