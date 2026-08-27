@@ -200,3 +200,133 @@ window.onclick = function(event) {
         }
     }
 }
+
+
+// CV download dialog
+
+(function() {
+    "use strict";
+
+    function initCvDownloadDialog() {
+        var triggers = Array.prototype.slice.call(document.querySelectorAll('.cv-modal-trigger'));
+
+        if (!triggers.length) {
+            return;
+        }
+
+        var modal = document.createElement('div');
+        modal.className = 'cv-download-modal';
+        modal.id = 'cv-download-dialog';
+        modal.setAttribute('aria-hidden', 'true');
+        modal.innerHTML = [
+            '<div class="cv-download-modal__backdrop" data-cv-close></div>',
+            '<div class="cv-download-modal__panel" role="dialog" aria-modal="true" aria-labelledby="cv-download-title" aria-describedby="cv-download-description" tabindex="-1">',
+                '<button class="cv-download-modal__close" type="button" data-cv-close aria-label="Close CV download dialog">',
+                    '<span aria-hidden="true">&times;</span>',
+                '</button>',
+                '<div class="cv-download-modal__icon" aria-hidden="true">',
+                    '<i class="fa fa-download"></i>',
+                '</div>',
+                '<p class="cv-download-modal__eyebrow">Curriculum Vitae</p>',
+                '<h2 class="cv-download-modal__title" id="cv-download-title">Download my CV</h2>',
+                '<p class="cv-download-modal__description" id="cv-download-description">Download the latest English version of my CV directly to your device.</p>',
+                '<div class="cv-download-modal__options">',
+                    '<a class="cv-download-option" href="../src/doc/CV/CV_pdf/CV_Zihao_EN.pdf" download="Zihao-Eric-GUO-CV-EN.pdf">',
+                        '<span class="cv-download-option__language" aria-hidden="true">EN</span>',
+                        '<span class="cv-download-option__copy">',
+                            '<strong>English CV</strong>',
+                            '<small>Download PDF</small>',
+                        '</span>',
+                        '<i class="fa fa-download cv-download-option__arrow" aria-hidden="true"></i>',
+                    '</a>',
+                '</div>',
+            '</div>'
+        ].join('');
+
+        document.body.appendChild(modal);
+
+        var panel = modal.querySelector('.cv-download-modal__panel');
+        var activeTrigger = null;
+
+        function getFocusableElements() {
+            return Array.prototype.slice.call(
+                modal.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])')
+            );
+        }
+
+        function openCvDialog(trigger) {
+            activeTrigger = trigger;
+            activeTrigger.setAttribute('aria-expanded', 'true');
+            modal.classList.add('is-open');
+            modal.setAttribute('aria-hidden', 'false');
+            document.body.classList.add('cv-modal-open');
+
+            window.setTimeout(function() {
+                panel.focus();
+            }, 30);
+        }
+
+        function closeCvDialog() {
+            if (!modal.classList.contains('is-open')) {
+                return;
+            }
+
+            modal.classList.remove('is-open');
+            modal.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('cv-modal-open');
+
+            if (activeTrigger) {
+                activeTrigger.setAttribute('aria-expanded', 'false');
+                activeTrigger.focus();
+            }
+        }
+
+        triggers.forEach(function(trigger) {
+            trigger.setAttribute('aria-expanded', 'false');
+            trigger.addEventListener('click', function(event) {
+                event.preventDefault();
+                openCvDialog(trigger);
+            });
+        });
+
+        modal.addEventListener('click', function(event) {
+            if (event.target.closest('[data-cv-close]')) {
+                closeCvDialog();
+            }
+        });
+
+        document.addEventListener('keydown', function(event) {
+            if (!modal.classList.contains('is-open')) {
+                return;
+            }
+
+            if (event.key === 'Escape') {
+                event.preventDefault();
+                closeCvDialog();
+                return;
+            }
+
+            if (event.key !== 'Tab') {
+                return;
+            }
+
+            var focusableElements = getFocusableElements();
+            var firstFocusable = focusableElements[0];
+            var lastFocusable = focusableElements[focusableElements.length - 1];
+
+            if (event.shiftKey && (document.activeElement === firstFocusable || document.activeElement === panel)) {
+                event.preventDefault();
+                lastFocusable.focus();
+            } else if (!event.shiftKey && document.activeElement === lastFocusable) {
+                event.preventDefault();
+                firstFocusable.focus();
+            }
+        });
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initCvDownloadDialog);
+    } else {
+        initCvDownloadDialog();
+    }
+})();
