@@ -44,6 +44,19 @@
             transform: translateY(-4px);
             box-shadow: 0 18px 28px rgba(0, 0, 0, 0.12);
          }
+         .education-card--trigger {
+            width: 100%;
+            text-align: left;
+            font: inherit;
+            color: inherit;
+         }
+         .experience-card:focus-visible {
+            outline: 2px solid #1f63ff;
+            outline-offset: 4px;
+         }
+         .education-card--trigger .h5 {
+            color: #03004e;
+         }
          .experience-modal {
             position: fixed;
             top: 0;
@@ -66,6 +79,8 @@
             border-radius: 16px;
             padding: 28px;
             max-width: 520px;
+            max-height: calc(100dvh - 40px);
+            overflow-y: auto;
             width: 100%;
             box-shadow: 0 25px 45px rgba(15, 18, 42, 0.25);
             position: relative;
@@ -354,11 +369,12 @@
                         <div class="col-lg-12">
                         <div class="row">
                            <div class="col-md-6 mb-4">
-                              <div class="education-card border-box h-100 p-4">
-                                 <h5 class="font-weight-600 mb-1"><a href="https://www.ip-paris.fr/">Institut Polytechnique de Paris</a></h5>
-                                 <p class="text-muted mb-1">Pre-doc · 2023 — 2026</p>
-                                 <p class="mb-0">Research topic: Preserving graph performance in an exogenously perturbed environment.</p>
-                              </div>
+                              <button type="button" class="education-card education-card--trigger experience-card border-box h-100 p-4" data-modal-target="modal-ip-paris" aria-haspopup="dialog" aria-controls="modal-ip-paris">
+                                 <span class="h5 d-block font-weight-600 mb-1">Institut Polytechnique de Paris</span>
+                                 <span class="d-block text-muted mb-1">Pre-doc · 2023 — 2026</span>
+                                 <span class="d-block mb-0">Research topic: Preserving graph performance in an exogenously perturbed environment.</span>
+                                 <span class="d-block text-muted font-size-13 mt-2">View research details &rarr;</span>
+                              </button>
                            </div>
                            <div class="col-md-6 mb-4">
                               <div class="education-card border-box h-100 p-4">
@@ -375,11 +391,12 @@
                               </div>
                            </div>
                            <div class="col-md-6 mb-4">
-                              <div class="education-card border-box h-100 p-4">
-                                 <h5 class="font-weight-600 mb-1"><a href="https://www.u-picardie.fr/universite-de-picardie-jules-verne-290591.kjsp">Université de Picardie Jules Verne</a></h5>
-                                 <p class="text-muted mb-1">Bachelor of Management · 2017 — 2021</p>
-                                 <p class="mb-0">Specialization in Optimization.</p>
-                              </div>
+                              <button type="button" class="education-card education-card--trigger experience-card border-box h-100 p-4" data-modal-target="modal-sau" aria-haspopup="dialog" aria-controls="modal-sau">
+                                 <span class="h5 d-block font-weight-600 mb-1">Université de Picardie Jules Verne</span>
+                                 <span class="d-block text-muted mb-1">Bachelor of Management · 2017 — 2021</span>
+                                 <span class="d-block mb-0">Specialization in Optimization.</span>
+                                 <span class="d-block text-muted font-size-13 mt-2">Dual Degree &rarr;</span>
+                              </button>
                            </div>
                         </div>
                      </div>
@@ -390,8 +407,8 @@
                            </div>
                         </div>
                         <div class="col-lg-6">
-                           <div class="res-block timeline-content mb-4 experience-card" data-modal-target="modal-alg" tabindex="0">
-                              <div class="mb-3 res-block-inner exp current">
+                           <div class="res-block timeline-content mb-4">
+                              <div class="mb-3 res-block-inner exp current experience-card" data-modal-target="modal-alg" tabindex="0" role="button" aria-haspopup="dialog" aria-controls="modal-alg">
                                  <div class="media align-items-center">
                                     <h6 class="font-weight-600 font-size-14 mb-0"> Algorithm Engineer 
                                        <span class="font-size-13 mt-1 text-alt d-block font-weight-400"> 2025.8 — 2025.11 </span> </h6>
@@ -402,10 +419,10 @@
                               </div>
                               <p class="mb-0">@ <a href="https://www.huawei.com/fr/">Huawei</a> — Shanghai, CHINA</p>
                            </div>
-                           <div class="res-block timeline-content mb-4 experience-card" data-modal-target="modal-dataeng" tabindex="0">
-                              <div class="mb-3 res-block-inner exp current">
+                           <div class="res-block timeline-content mb-4">
+                              <div class="mb-3 res-block-inner exp current experience-card" data-modal-target="modal-dataeng" tabindex="0" role="button" aria-haspopup="dialog" aria-controls="modal-dataeng">
                                  <div class="media align-items-center">
-                                    <h6 class="font-weight-600 font-size-14 mb-0"> Data Engineer 
+                                    <h6 class="font-weight-600 font-size-14 mb-0"> Data Scientist
                                        <span class="font-size-13 mt-1 text-alt d-block font-weight-400"> 2022.4 — 2022.9 </span> </h6>
                                     <div class="media-body text-right">
                                        <span class="badge  bg-primary-2">Internship</span>
@@ -416,10 +433,10 @@
                            </div>
                         </div>
                         <div class="col-lg-6">
-                           <div class="res-block timeline-content mb-4 experience-card" data-modal-target="modal-genomics" tabindex="0">
-                              <div class="mb-3 res-block-inner exp current">
+                           <div class="res-block timeline-content mb-4">
+                              <div class="mb-3 res-block-inner exp current experience-card" data-modal-target="modal-genomics" tabindex="0" role="button" aria-haspopup="dialog" aria-controls="modal-genomics">
                                  <div class="media align-items-center">
-                                    <h6 class="font-weight-600 font-size-14 mb-0"> Genomics Algorithm Developer 
+                                    <h6 class="font-weight-600 font-size-14 mb-0"> Algorithm Developer
                                        <span class="font-size-13 mt-1 text-alt d-block font-weight-400"> 2023.4 — 2023.9 </span> </h6>
                                     <div class="media-body text-right">
                                        <span class="badge  bg-primary-2">Internship</span>
@@ -428,10 +445,10 @@
                               </div>
                               <p class="mb-0">@ <a href="https://www.ebi.ac.uk/">European Bioinformatics Institute</a> — Cambridge, UK</p>
                            </div>
-                           <div class="res-block timeline-content mb-4 experience-card" data-modal-target="modal-dataanalyst" tabindex="0">
-                              <div class="mb-3 res-block-inner exp">
+                           <div class="res-block timeline-content mb-4">
+                              <div class="mb-3 res-block-inner exp experience-card" data-modal-target="modal-dataanalyst" tabindex="0" role="button" aria-haspopup="dialog" aria-controls="modal-dataanalyst">
                                  <div class="media align-items-center">
-                                    <h6 class="font-weight-600 font-size-14 mb-0"> Data Analyst 
+                                    <h6 class="font-weight-600 font-size-14 mb-0"> Data Scientist
                                        <span class="font-size-13 mt-1 text-alt d-block font-weight-400"> 2021.11 — 2022.1 </span> </h6>
                                     <div class="media-body text-right">
                                        <span class="badge  bg-primary-2">Internship</span>
@@ -482,26 +499,50 @@
       <!-- End wrapper -->
 
       <!-- Experience Modals -->
+      <div id="modal-ip-paris" class="experience-modal" role="dialog" aria-modal="true" aria-labelledby="modal-ip-paris-title">
+         <div class="experience-modal__content">
+            <button type="button" class="experience-modal__close" data-close-modal aria-label="Close">&times;</button>
+            <div class="d-flex flex-wrap align-items-center justify-content-between pr-3 mb-2">
+               <h4 id="modal-ip-paris-title" class="mr-3 mb-2">Research Scientist</h4>
+               <span class="badge bg-primary-2 mb-2">Contract</span>
+            </div>
+            <p class="mb-1"><a href="https://www.imt.fr/" target="_blank" rel="noopener">L'Institut Mines-Télécom</a></p>
+            <p class="text-muted mb-3">Oct 2023 - Oct 2026</p>
+            <ul class="mb-0 pl-3">
+               <li>Developed LLM-based systems for algorithm generation and optimization using SFT and RLFT.</li>
+               <li>Integrated traffic forecasting with multi-objective optimization to enable proactive public transport network redesign under uncertainty.</li>
+               <li>Designed vehicle routing methods under uncertainty with MILP and stochastic optimization.</li>
+            </ul>
+         </div>
+      </div>
+      <div id="modal-sau" class="experience-modal" role="dialog" aria-modal="true" aria-labelledby="modal-sau-title">
+         <div class="experience-modal__content">
+            <button type="button" class="experience-modal__close" data-close-modal aria-label="Close">&times;</button>
+            <h4 id="modal-sau-title" class="pr-3"><a href="https://www.sau.edu.cn" target="_blank" rel="noopener">Shenyang University of Aeronautics and Astronautics</a></h4>
+            <p class="text-muted mb-2">Bachelor of Engineering · 2017 — 2021</p>
+            <p class="mb-0">Specialization in Mechanical Engineering.</p>
+         </div>
+      </div>
       <div id="modal-alg" class="experience-modal" role="dialog" aria-modal="true" aria-labelledby="modal-alg-title">
          <div class="experience-modal__content">
             <button class="experience-modal__close" data-close-modal aria-label="Close">&times;</button>
             <h4 id="modal-alg-title">Algorithm Engineer — <a href="https://www.huawei.com/fr/" target="_blank" rel="noopener">Huawei</a></h4>
             <p class="text-muted mb-2">2025.8 — 2025.11 · Shanghai, CHINA</p>
             <ul class="mb-0 pl-3">
-               <li>Developed a point cloud-channel multimodal contrastive learning framework, aligning environment and channel modalities within a shared feature space.</li>
-               <li>Proposed an integer-partition-based non-contiguous resource block allocation algorithm that extends the legacy RIV continuous allocation mechanism.</li>
+               <li>Developed a multimodal contrastive learning framework integrating 3D point clouds and wireless channel data to predict channel characteristics at target locations from surrounding environmental observations, aligning both modalities in a shared representation space and validating predictions against ground-truth channel measurements.</li>
+               <li>Proposed a non-contiguous resource block allocation algorithm based on integer partitioning, extending the conventional RIV-based contiguous allocation mechanism to support more flexible spectrum resource allocation.</li>
             </ul>
          </div>
       </div>
       <div id="modal-dataeng" class="experience-modal" role="dialog" aria-modal="true" aria-labelledby="modal-dataeng-title">
          <div class="experience-modal__content">
             <button class="experience-modal__close" data-close-modal aria-label="Close">&times;</button>
-            <h4 id="modal-dataeng-title">Data Engineer — <a href="https://www.ifpenergiesnouvelles.com/" target="_blank" rel="noopener">IFP Energies nouvelles</a></h4>
+            <h4 id="modal-dataeng-title">Data Scientist — <a href="https://www.ifpenergiesnouvelles.com/" target="_blank" rel="noopener">IFP Energies nouvelles</a></h4>
             <p class="text-muted mb-2">2022.4 — 2022.9 · Rueil-Malmaison, FRANCE</p>
             <ul class="mb-3 pl-3">
-               <li>Analyzed badge validation data and built exploratory dashboards for the mobility analytics team.</li>
-               <li>Benchmark validation counts against MATSim agent-based simulations to calibrate software accuracy and reduce discrepancies.</li>
-               <li>Applied SARIMAX, NeuralProphet, and related time-series models to forecast corrected statistics and quantify external impacts.</li>
+               <li>Analyzed large-scale public transport validation data stored and queried in MongoDB, and developed a dashboard to monitor mobility patterns and key indicators.</li>
+               <li>Compared observed validation data with MATSim agent-based transport simulations to identify discrepancies and assess simulation accuracy.</li>
+               <li>Developed time-series forecasting models (SARIMAX, NeuralProphet) to analyze influencing factors, predict passenger flows, and correct statistical estimates.</li>
             </ul>
             <p class="mb-0 text-muted">Supervised by Dr. Pierre Michel.</p>
          </div>
@@ -509,18 +550,25 @@
       <div id="modal-genomics" class="experience-modal" role="dialog" aria-modal="true" aria-labelledby="modal-genomics-title">
          <div class="experience-modal__content">
             <button class="experience-modal__close" data-close-modal aria-label="Close">&times;</button>
-            <h4 id="modal-genomics-title">Genomics Algorithm Developer — <a href="https://www.ebi.ac.uk/" target="_blank" rel="noopener">EMBL-EBI</a></h4>
+            <h4 id="modal-genomics-title">Algorithm Developer — <a href="https://www.ebi.ac.uk/" target="_blank" rel="noopener">EMBL-EBI</a></h4>
             <p class="text-muted mb-2">2023.4 — 2023.9 · Cambridge, UK</p>
-            <p>Researched genetic evolutionary tools and simulated the evolution of genomes along large, short-branch phylogenetic trees to support pandemic-scale analyses.</p>
+            <ul class="mb-3 pl-3">
+               <li>Developed and evaluated large-scale phylogenetic algorithms for simulating genome evolution along large, short-branch phylogenetic trees, supporting datasets of up to 500,000 genomes.</li>
+               <li>Built an automated Python/R/Bash pipeline for simulation, cluster execution, result collection, and benchmarking across multiple experimental configurations.</li>
+               <li>Evaluated topological accuracy, likelihood, runtime, and memory consumption over repeated experiments, achieving a &gt;100× speedup compared with the reference method while maintaining competitive phylogenetic accuracy.</li>
+            </ul>
             <p class="mb-0 text-muted">Supervised by Dr. Nicola De Maio.</p>
          </div>
       </div>
       <div id="modal-dataanalyst" class="experience-modal" role="dialog" aria-modal="true" aria-labelledby="modal-dataanalyst-title">
          <div class="experience-modal__content">
             <button class="experience-modal__close" data-close-modal aria-label="Close">&times;</button>
-            <h4 id="modal-dataanalyst-title">Data Analyst — <a href="https://www.tencent.com" target="_blank" rel="noopener">Tencent</a></h4>
+            <h4 id="modal-dataanalyst-title">Data Scientist — <a href="https://www.tencent.com" target="_blank" rel="noopener">Tencent</a></h4>
             <p class="text-muted mb-2">2021.11 — 2022.1 · Beijing, China (Remote)</p>
-            <p>Through deep mining of user churn data, built predictive models that estimated churn probability and guided recovery strategies for prioritized cohorts.</p>
+            <ul class="mb-3 pl-3">
+               <li>Developed a customer churn prediction model on approximately 100,000 customer records, engineering 30+ behavioral and usage features to identify high-risk users and support targeted retention strategies.</li>
+               <li>Trained and compared 4 classification models using scikit-learn, optimized them with GridSearchCV, and achieved an ROC-AUC of approximately 0.86, with the top 20% highest-risk customers capturing around 55% of observed churners.</li>
+            </ul>
             <p class="mb-0 text-muted">Supervised by Dr. Zhao Zhang.</p>
          </div>
       </div>
@@ -529,19 +577,24 @@
          document.addEventListener('DOMContentLoaded', function () {
             const cards = Array.from(document.querySelectorAll('.experience-card'));
             const modals = Array.from(document.querySelectorAll('.experience-modal'));
+            let modalTrigger = null;
 
             const openModal = (id) => {
                const modal = document.getElementById(id);
                if (modal) {
+                  modalTrigger = document.activeElement;
                   modal.classList.add('active');
                   document.body.classList.add('modal-open');
+                  modal.querySelector('[data-close-modal]').focus();
                }
             };
 
             const closeModal = (modal) => {
+               if (!modal.classList.contains('active')) return;
                modal.classList.remove('active');
                if (!document.querySelector('.experience-modal.active')) {
                   document.body.classList.remove('modal-open');
+                  if (modalTrigger) modalTrigger.focus();
                }
             };
 
@@ -553,6 +606,7 @@
                   openModal(card.getAttribute('data-modal-target'));
                });
                card.addEventListener('keydown', (event) => {
+                  if (card.tagName === 'BUTTON' || event.target.closest('a')) return;
                   if (event.key === 'Enter' || event.key === ' ') {
                      event.preventDefault();
                      openModal(card.getAttribute('data-modal-target'));
@@ -573,6 +627,19 @@
             });
 
             document.addEventListener('keydown', (event) => {
+               const activeModal = document.querySelector('.experience-modal.active');
+               if (event.key === 'Tab' && activeModal) {
+                  const focusable = Array.from(activeModal.querySelectorAll('a[href], button'));
+                  const first = focusable[0];
+                  const last = focusable[focusable.length - 1];
+                  if (event.shiftKey && document.activeElement === first) {
+                     event.preventDefault();
+                     last.focus();
+                  } else if (!event.shiftKey && document.activeElement === last) {
+                     event.preventDefault();
+                     first.focus();
+                  }
+               }
                if (event.key === 'Escape') {
                   modals.forEach(modal => closeModal(modal));
                }
