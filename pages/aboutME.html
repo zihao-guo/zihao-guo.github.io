@@ -10,7 +10,7 @@
       <!-- Css -->
       <link rel="icon" href="../src/images/favicon.ico">
       <link href="../utils/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-      <link href="../utils/css/main.css" rel="stylesheet" type="text/css" media="all" />
+      <link href="../utils/css/main.css?v=20260916-3" rel="stylesheet" type="text/css" media="all" />
       <link href="../utils/css/publication-preview.css" rel="stylesheet" type="text/css" media="all" />
       <link href="../utils/css/venobox.css" rel="stylesheet" type="text/css" media="all" />
       <link href="../utils/css/animate.css" rel="stylesheet" type="text/css" media="all"/>
@@ -259,41 +259,19 @@
                                  </p>
                                  <p class="mb-0 ">I love everything about statistics and optimization, and I’m excited to share my knowledge, passion, and tools with collaborators.</p>
                                  <ul class="resume-highlights resume-highlights--compact mt-4">
-                                    <li class="credential-highlight">
-                                       <button type="button" class="credential-highlight__trigger" aria-controls="credential-details">
+                                    <li class="highlight-card">
+                                       <button type="button" class="highlight-trigger experience-card" data-modal-target="modal-credential" aria-haspopup="dialog" aria-controls="modal-credential">
                                           <span class="highlight-value">Interdisciplinary</span>
                                           <span class="highlight-label">collaborating across labs &amp; industry</span>
+                                          <span class="highlight-action">View certification &rarr;</span>
                                        </button>
-                                       <div id="credential-details" class="credential-tooltip" role="group" aria-labelledby="credential-title">
-                                          <div class="language-tooltip__panel">
-                                             <p id="credential-title" class="credential-tooltip__title">Professional Machine Learning Engineer Certification</p>
-                                             <p class="credential-tooltip__issuer">Google</p>
-                                             <a class="credential-tooltip__link" href="https://www.credly.com/badges/e405495c-f66a-462f-b5aa-d9f07dfe290a/linked_in_profile" target="_blank" rel="noopener noreferrer">Show credential <span aria-hidden="true">&nearr;</span></a>
-                                          </div>
-                                       </div>
                                     </li>
-                                    <li class="language-highlight">
-                                       <button type="button" class="language-highlight__trigger" aria-describedby="language-details">
+                                    <li class="highlight-card">
+                                       <button type="button" class="highlight-trigger experience-card" data-modal-target="modal-languages" aria-haspopup="dialog" aria-controls="modal-languages">
                                           <span class="highlight-value">Multilingual</span>
                                           <span class="highlight-label">working across EN · FR · CN</span>
+                                          <span class="highlight-action">View languages &rarr;</span>
                                        </button>
-                                       <div id="language-details" class="language-tooltip" role="tooltip">
-                                          <div class="language-tooltip__panel">
-                                             <p class="language-tooltip__title">Languages</p>
-                                             <div class="language-tooltip__item">
-                                                <p><strong>Chinese:</strong> Native language</p>
-                                                <div class="language-tooltip__bar" aria-hidden="true"><span style="width: 95%"></span></div>
-                                             </div>
-                                             <div class="language-tooltip__item">
-                                                <p><strong>English:</strong> Fluent (GRE 326)</p>
-                                                <div class="language-tooltip__bar" aria-hidden="true"><span style="width: 82%"></span></div>
-                                             </div>
-                                             <div class="language-tooltip__item">
-                                                <p><strong>French:</strong> Fluent (DALF C1)</p>
-                                                <div class="language-tooltip__bar" aria-hidden="true"><span style="width: 72%"></span></div>
-                                             </div>
-                                          </div>
-                                       </div>
                                     </li>
                                  </ul>
                               </div>
@@ -325,8 +303,9 @@
 
                      <div class="row mt-5">
                         <div class="col-lg-12">
-                           <div class="main-title position-relative mb-4">
+                           <div class="main-title position-relative mb-4 d-flex flex-wrap align-items-baseline">
                               <h2 class="h4 ml-2 mb-0 font-weight-600">Publications</h2>
+                              <span class="ml-3 font-size-13 text-muted">Full list on <a href="https://scholar.google.com/citations?user=gMy-9XEAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a></span>
                            </div>
                         </div>
                      </div>
@@ -555,6 +534,34 @@
       <!-- End wrapper -->
 
       <!-- Experience Modals -->
+      <div id="modal-credential" class="experience-modal" role="dialog" aria-modal="true" aria-labelledby="modal-credential-title">
+         <div class="experience-modal__content">
+            <button type="button" class="experience-modal__close" data-close-modal aria-label="Close">&times;</button>
+            <h4 id="modal-credential-title" class="pr-3">Professional Machine Learning Engineer Certification</h4>
+            <p class="text-muted mb-3">Google</p>
+            <div class="d-flex justify-content-end">
+               <a class="experience-modal__project-link" href="https://www.credly.com/badges/e405495c-f66a-462f-b5aa-d9f07dfe290a/linked_in_profile" target="_blank" rel="noopener noreferrer">Show credential <span aria-hidden="true">&nearr;</span></a>
+            </div>
+         </div>
+      </div>
+      <div id="modal-languages" class="experience-modal" role="dialog" aria-modal="true" aria-labelledby="modal-languages-title">
+         <div class="experience-modal__content">
+            <button type="button" class="experience-modal__close" data-close-modal aria-label="Close">&times;</button>
+            <h4 id="modal-languages-title" class="pr-3 mb-4">Languages</h4>
+            <div class="language-level">
+               <p><strong>Chinese:</strong> Native language</p>
+               <div class="language-level__bar" aria-hidden="true"><span style="width: 95%"></span></div>
+            </div>
+            <div class="language-level">
+               <p><strong>English:</strong> Fluent (GRE 326)</p>
+               <div class="language-level__bar" aria-hidden="true"><span style="width: 82%"></span></div>
+            </div>
+            <div class="language-level">
+               <p><strong>French:</strong> Fluent (DALF C1)</p>
+               <div class="language-level__bar" aria-hidden="true"><span style="width: 72%"></span></div>
+            </div>
+         </div>
+      </div>
       <div id="modal-ip-paris" class="experience-modal" role="dialog" aria-modal="true" aria-labelledby="modal-ip-paris-title">
          <div class="experience-modal__content">
             <button type="button" class="experience-modal__close" data-close-modal aria-label="Close">&times;</button>
