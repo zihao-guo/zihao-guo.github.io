@@ -103,6 +103,21 @@
             color: #1649c7;
             text-decoration: none;
          }
+         .experience-modal__content .experience-modal__project-link {
+            padding: 9px 16px;
+            border-radius: 6px;
+            background: #1f63ff;
+            color: #fff;
+            font-size: 0.85rem;
+         }
+         .experience-modal__content .experience-modal__project-link:hover {
+            background: #1649c7;
+            color: #fff;
+         }
+         .experience-modal__project-link:focus-visible {
+            outline: 2px solid #1f63ff;
+            outline-offset: 3px;
+         }
          @keyframes modalFade {
             from { opacity: 0; transform: translateY(12px); }
             to { opacity: 1; transform: translateY(0); }
@@ -244,13 +259,41 @@
                                  </p>
                                  <p class="mb-0 ">I love everything about statistics and optimization, and I’m excited to share my knowledge, passion, and tools with collaborators.</p>
                                  <ul class="resume-highlights resume-highlights--compact mt-4">
-                                    <li>
-                                       <span class="highlight-value">Interdisciplinary</span>
-                                       <span class="highlight-label">collaborating across labs &amp; industry</span>
+                                    <li class="credential-highlight">
+                                       <button type="button" class="credential-highlight__trigger" aria-controls="credential-details">
+                                          <span class="highlight-value">Interdisciplinary</span>
+                                          <span class="highlight-label">collaborating across labs &amp; industry</span>
+                                       </button>
+                                       <div id="credential-details" class="credential-tooltip" role="group" aria-labelledby="credential-title">
+                                          <div class="language-tooltip__panel">
+                                             <p id="credential-title" class="credential-tooltip__title">Professional Machine Learning Engineer Certification</p>
+                                             <p class="credential-tooltip__issuer">Google</p>
+                                             <a class="credential-tooltip__link" href="https://www.credly.com/badges/e405495c-f66a-462f-b5aa-d9f07dfe290a/linked_in_profile" target="_blank" rel="noopener noreferrer">Show credential <span aria-hidden="true">&nearr;</span></a>
+                                          </div>
+                                       </div>
                                     </li>
-                                    <li>
-                                       <span class="highlight-value">Multilingual</span>
-                                       <span class="highlight-label">working across EN · FR · CN</span>
+                                    <li class="language-highlight">
+                                       <button type="button" class="language-highlight__trigger" aria-describedby="language-details">
+                                          <span class="highlight-value">Multilingual</span>
+                                          <span class="highlight-label">working across EN · FR · CN</span>
+                                       </button>
+                                       <div id="language-details" class="language-tooltip" role="tooltip">
+                                          <div class="language-tooltip__panel">
+                                             <p class="language-tooltip__title">Languages</p>
+                                             <div class="language-tooltip__item">
+                                                <p><strong>Chinese:</strong> Native language</p>
+                                                <div class="language-tooltip__bar" aria-hidden="true"><span style="width: 95%"></span></div>
+                                             </div>
+                                             <div class="language-tooltip__item">
+                                                <p><strong>English:</strong> Fluent (GRE 326)</p>
+                                                <div class="language-tooltip__bar" aria-hidden="true"><span style="width: 82%"></span></div>
+                                             </div>
+                                             <div class="language-tooltip__item">
+                                                <p><strong>French:</strong> Fluent (DALF C1)</p>
+                                                <div class="language-tooltip__bar" aria-hidden="true"><span style="width: 72%"></span></div>
+                                             </div>
+                                          </div>
+                                       </div>
                                     </li>
                                  </ul>
                               </div>
@@ -558,6 +601,9 @@
                <li>Developed time-series forecasting models (SARIMAX, NeuralProphet) to analyze influencing factors, predict passenger flows, and correct statistical estimates.</li>
             </ul>
             <p class="mb-0 text-muted">Supervised by Dr. Pierre Michel.</p>
+            <div class="d-flex justify-content-end mt-3">
+               <a class="experience-modal__project-link" href="1_project_IFP.html">View project <span aria-hidden="true">&rarr;</span></a>
+            </div>
          </div>
       </div>
       <div id="modal-genomics" class="experience-modal" role="dialog" aria-modal="true" aria-labelledby="modal-genomics-title">
@@ -571,6 +617,9 @@
                <li>Evaluated topological accuracy, likelihood, runtime, and memory consumption over repeated experiments, achieving a &gt;100× speedup compared with the reference method while maintaining competitive phylogenetic accuracy.</li>
             </ul>
             <p class="mb-0 text-muted">Supervised by Dr. Nicola De Maio.</p>
+            <div class="d-flex justify-content-end mt-3">
+               <a class="experience-modal__project-link" href="2_project_EBI.html">View project <span aria-hidden="true">&rarr;</span></a>
+            </div>
          </div>
       </div>
       <div id="modal-dataanalyst" class="experience-modal" role="dialog" aria-modal="true" aria-labelledby="modal-dataanalyst-title">
