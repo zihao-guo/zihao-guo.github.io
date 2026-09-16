@@ -1,0 +1,38 @@
+.mytable .img-bordered {
+   cursor: zoom-in;
+}
+
+.mytable .img-bordered:focus-visible {
+   outline: 2px solid #1f63ff;
+   outline-offset: 4px;
+}
+
+.publication-preview {
+   position: fixed;
+   z-index: 1100;
+   box-sizing: border-box;
+   padding: 12px;
+   object-fit: contain;
+   background: #fff;
+   border: 1px solid #e0e6ed;
+   border-radius: 10px;
+   box-shadow: 0 16px 44px rgba(15, 18, 42, 0.22);
+   pointer-events: none;
+   opacity: 0;
+   visibility: hidden;
+   transform: scale(0.97);
+   transition: opacity 160ms ease, transform 160ms ease, visibility 160ms;
+}
+
+.publication-preview.is-visible {
+   opacity: 1;
+   visibility: visible;
+   transform: scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+   .publication-preview {
+      transition: none;
+      transform: none;
+   }
+}
