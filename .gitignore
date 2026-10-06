@@ -1,0 +1,4 @@
+
+# Keep unprotected thesis and local tooling out of the published repository.
+/src/doc/thesis/Zihao_s_thesis.pdf
+/tmp/

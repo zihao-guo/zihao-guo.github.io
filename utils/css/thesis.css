@@ -1,0 +1,76 @@
+/* Full-width doctoral research entry. */
+.thesis-feature {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+    padding: 32px;
+    border: 1px solid #e4dce0;
+    border-radius: 8px;
+    background: #faf6f7;
+    color: #343434;
+    text-decoration: none;
+    transition: border-color .2s, box-shadow .2s;
+}
+.thesis-feature:hover, .thesis-feature:focus-visible {
+    color: #343434;
+    border-color: #64363c;
+    box-shadow: 0 8px 24px rgba(100, 54, 60, .1);
+    text-decoration: none;
+}
+.thesis-feature:focus-visible { outline: 2px solid #64363c; outline-offset: 4px; }
+.thesis-feature__label { color: #64363c; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; }
+.thesis-feature__keywords { color: #6c757d; font-size: 13px; }
+.thesis-feature__link { color: #64363c; font-weight: 600; white-space: nowrap; }
+@media (max-width: 767px) {
+    .thesis-feature { flex-direction: column; align-items: flex-start; padding: 24px; gap: 20px; }
+}
+
+.manuscript-access { max-width: 520px; padding: 32px; border: 1px solid #e4dce0; border-radius: 8px; background: #fff; }
+dialog.manuscript-access::backdrop { background: rgba(0, 0, 0, .45); }
+#manuscript-content[hidden], #manuscript-gate[hidden] { display: none !important; }
+
+.manuscript-divider { border: 0; border-top: 1px solid #e4dce0; margin: 40px 0 0; }
+
+.manuscript-reading { max-width: 760px; margin: 0 auto; }
+.manuscript-header { padding: 8px 0 32px; }
+.manuscript-eyebrow { color: #64363c; font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 16px; }
+.manuscript-title { font-size: clamp(25px, 3vw, 34px); line-height: 1.35; font-weight: 600; letter-spacing: -.025em; margin-bottom: 24px; }
+.manuscript-author { font-size: 16px; font-weight: 600; margin-bottom: 6px; }
+.manuscript-affiliation { color: #737078; font-size: 14px; line-height: 1.7; margin-bottom: 0; }
+.manuscript-abstract p { font-size: 15px; line-height: 1.8; color: #48454b; margin-bottom: 24px; text-align: left; }
+.manuscript-keywords { margin-top: 32px; }
+.manuscript-keywords h2 { font-size: 12px; font-weight: 600; color: #737078; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 12px; }
+.manuscript-keywords ul { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.manuscript-keywords li { background: #faf6f7; color: #64363c; border: 1px solid #eee3e6; border-radius: 6px; padding: 6px 12px; font-size: 12px; line-height: 1.6; }
+.manuscript-download { margin-top: 32px; padding: 28px; background: #faf6f7; border: 1px solid #eee3e6; border-radius: 10px; }
+.manuscript-download p { line-height: 1.8; }
+.manuscript-download .btn, .manuscript-access .btn-primary { background: #64363c; border-color: #64363c; color: #fff; border-radius: 6px; padding: 12px 20px; white-space: normal; }
+.manuscript-download .btn:hover, .manuscript-access .btn-primary:hover { background: #4e292e; border-color: #4e292e; }
+.manuscript-download .btn:focus-visible, .manuscript-access .btn:focus-visible { outline: 2px solid #64363c; outline-offset: 4px; }
+.manuscript-download-note { font-size: 12px; color: #737078; margin: 0 0 8px; }
+.manuscript-access { background: #faf6f7; box-shadow: 0 16px 48px rgba(48, 26, 30, .12); width: min(520px, calc(100% - 32px)); }
+.manuscript-access .form-control:focus { border-color: #64363c; box-shadow: 0 0 0 3px rgba(100, 54, 60, .1); }
+@media (max-width: 575px) {
+    .manuscript-header { padding-bottom: 24px; }
+    .manuscript-download { padding: 22px 18px; }
+    .manuscript-download .btn { width: 100%; }
+    .manuscript-access { padding: 24px 20px; }
+}
+
+.manuscript-supervision { color: #625b63; font-size: 14px; line-height: 1.7; margin-bottom: 12px; }
+
+
+
+.project-title-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.kaggle-expert-link { display: inline-flex; align-items: center; gap: 9px; margin-right: 8px; color: #68656b; font-size: 13px; line-height: 1.5; text-decoration: none; white-space: nowrap; }
+.kaggle-link-mark { color: #20a7d5; font-family: Arial, sans-serif; font-size: 26px; font-weight: 400; line-height: 1; }
+.kaggle-link-level { color: #918a93; margin-left: 4px; font-size: 12px; }
+.kaggle-link-arrow { color: #918a93; font-size: 14px; transition: transform .2s; }
+.kaggle-expert-link:hover { color: #157ba7; text-decoration: none; }
+.kaggle-expert-link:hover .kaggle-link-arrow { transform: translate(2px, -2px); }
+.kaggle-expert-link:focus-visible { outline: 2px solid #157ba7; outline-offset: 5px; border-radius: 2px; }
+@media (max-width: 575px) {
+    .project-title-row { flex-wrap: wrap; gap: 12px; }
+    .project-title-row .kaggle-expert-link { margin-left: 8px; flex-basis: 100%; }
+}

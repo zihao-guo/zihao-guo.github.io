@@ -21,6 +21,7 @@
 <!-- 字体示例 -->
     <link href="http://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link href="../utils/css/thesis.css" rel="stylesheet">
 </head>
 <body>
 <!-- 自定义鼠标特效 -->
@@ -115,8 +116,9 @@
 <!-- (1) 「My project」部分 -->
                     <div class="row">
                         <div class="col-lg-12">
-                            <div class="main-title position-relative mb-4">
+                            <div class="main-title position-relative mb-4 project-title-row">
                                 <h2 class="h4 ml-2 mb-0 font-weight-600">My Project</h2>
+                                <a class="kaggle-expert-link" href="https://www.kaggle.com/zeio99guo" target="_blank" rel="noopener noreferrer" aria-label="Kaggle Expert ? view my Kaggle profile (opens in a new tab)"><span class="kaggle-link-mark" aria-hidden="true">k</span><span>Kaggle <span class="kaggle-link-level">Expert</span></span><span class="kaggle-link-arrow" aria-hidden="true">&nearr;</span></a>
                             </div>
                         </div>
                     </div>
@@ -354,6 +356,18 @@
                                 <h2 class="h4 ml-2 mb-0 font-weight-600">My Research</h2>
                             </div>
                         </div>
+<!-- Thesis -->
+                        <div class="col-12 mb-5">
+                            <a class="thesis-feature" href="thesis.html">
+                                <div>
+                                    <span class="thesis-feature__label">Doctoral research</span>
+                                    <h3 class="h4 font-weight-600 mt-2 mb-3">Thèse / PhD Research</h3>
+                                    <p class="mb-3">Optimization methods for structure-preserving redesign in routing problems.</p>
+                                    <span class="thesis-feature__keywords">Structure-preserving redesign &middot; Routing &middot; LLM-based algorithm design</span>
+                                </div>
+                                <span class="thesis-feature__link">Explore my research <span aria-hidden="true">&rarr;</span></span>
+                            </a>
+                        </div>
 <!-- EBI -->
                         <div class="col-md-6 col-lg-6 d-flex mb-5">
                             <article>
@@ -527,5 +541,6 @@
 <script src="../utils/js/jquery.easy-pie-chart.js"></script>
 <script src="../utils/js/script.js"></script>
 <!-- 若有GA或其他统计也可在此插入 -->
+<script src="../utils/js/thesis-download.js?v=20261208" defer></script>
 </body>
 </html>
