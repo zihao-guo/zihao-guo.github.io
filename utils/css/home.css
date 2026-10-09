@@ -1,0 +1,184 @@
+.prince-walk-card {
+   display: grid;
+   grid-template-columns: 3fr 2fr;
+   align-items: center;
+   max-width: 760px;
+   margin: 0 auto;
+   padding: 12px;
+   overflow: hidden;
+   border: 1px solid #dceeee;
+   border-radius: 24px;
+   background: #eff8fb;
+   box-shadow: 0 8px 24px rgba(42, 71, 89, 0.06);
+}
+
+#princeIntro[hidden],
+#princeDialogue[hidden],
+#princeSnakeGame[hidden],
+#princeWalkImage[hidden] {
+   display: none !important;
+}
+
+.prince-dialogue {
+   position: relative;
+   margin: 12px 16px 12px -44px;
+   padding: 20px;
+   border: 1px solid #dceeee;
+   border-radius: 20px;
+   background: #ffffff;
+   color: #2a4759;
+   animation: prince-dialogue-in 0.35s ease both;
+}
+
+.prince-dialogue::before {
+   content: "";
+   position: absolute;
+   left: -8px;
+   top: 35%;
+   width: 14px;
+   height: 14px;
+   border-left: 1px solid #dceeee;
+   border-bottom: 1px solid #dceeee;
+   background: #ffffff;
+   transform: rotate(45deg);
+}
+
+@keyframes prince-dialogue-in {
+   from { opacity: 0; transform: translateY(6px); }
+   to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 575px) {
+   .prince-walk-card { grid-template-columns: 1fr; }
+   .prince-dialogue { margin: 0 16px 12px; text-align: center; }
+   .prince-dialogue::before { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+   .prince-dialogue { animation: none; }
+}
+
+.prince-stage {
+   position: relative;
+   min-width: 0;
+   height: 280px;
+   overflow: hidden;
+}
+
+.prince-stage::before {
+   content: "✦";
+   position: absolute;
+   top: 26px;
+   left: 14%;
+   color: #ddc47e;
+   font-size: 18px;
+   text-shadow: 160px 10px #ddc47e, 40px 190px #ddc47e;
+}
+
+.prince-character {
+   position: absolute;
+   bottom: 4px;
+   left: 50%;
+   width: 260px;
+   height: 260px;
+   transform: translateX(-360%);
+}
+
+.prince-pose {
+   position: absolute;
+   inset: 0;
+   background-image: url("../../src/images/little-prince-sprites.png");
+   background-size: 300% 100%;
+   background-repeat: no-repeat;
+}
+
+.prince-pose--walking {
+   background-image: none;
+   transform: translateX(-12%);
+}
+
+.prince-pose--smiling {
+   background-position: 100% 0%;
+   transform: translateX(4.5%);
+   opacity: 0;
+}
+
+/* Each foot swings past the other; the planted foot stays low as it moves back. */
+.prince-walk-piece {
+   position: absolute;
+   inset: 0;
+   background-image: url("../../src/images/little-prince-sprites.png");
+   background-size: 300% 100%;
+   background-position: 0% 0%;
+   background-repeat: no-repeat;
+}
+
+.prince-walk-body {
+   clip-path: polygon(0 0, 100% 0, 100% 84%, 0 84%);
+   z-index: 3;
+}
+
+.prince-leg--left {
+   /* Follow the slanted trouser edge below the coat, excluding all green pixels. */
+   clip-path: polygon(43.5% 81%, 51.5% 83%, 56% 83%, 56% 100%, 35% 100%, 35% 86%);
+   translate: 0 -3px;
+   transform-origin: 52% 81%;
+}
+
+.prince-leg--right {
+   clip-path: polygon(64.5% 82%, 73.5% 80%, 76% 83%, 85% 85%, 85% 100%, 63% 100%, 63% 85%);
+   translate: 0 -3px;
+   transform-origin: 73% 81%;
+}
+
+.is-started .prince-character {
+   animation: prince-walk-in 4s linear both;
+}
+
+.is-started .prince-pose--walking {
+   animation: prince-pose-hide 0.8s ease 4s forwards;
+}
+
+.is-started .prince-leg--left {
+   animation: prince-left-step 0.8s linear 5;
+}
+
+.is-started .prince-leg--right {
+   animation: prince-right-step 0.8s linear 5;
+}
+
+.is-started .prince-walk-body {
+   animation: prince-body-bob 0.4s ease-in-out 10;
+}
+
+.is-started .prince-pose--smiling {
+   animation: prince-pose-show 0.8s ease 4s forwards;
+}
+
+@keyframes prince-walk-in {
+   from { left: 0; transform: translateX(-55%); }
+   to { left: 50%; transform: translateX(-50%); }
+}
+
+@keyframes prince-left-step {
+   0%, 100% { transform: rotate(8deg); z-index: 1; }
+   25% { transform: translate(14px, -8px) rotate(-24deg); z-index: 2; }
+   50% { transform: translateX(24px) rotate(-46deg); z-index: 2; }
+   75% { transform: translateX(12px) rotate(-18deg); z-index: 1; }
+}
+
+@keyframes prince-right-step {
+   0%, 100% { transform: rotate(-8deg); z-index: 2; }
+   25% { transform: translateX(-13px) rotate(18deg); z-index: 1; }
+   50% { transform: translateX(-26px) rotate(42deg); z-index: 1; }
+   75% { transform: translate(-14px, -8px) rotate(12deg); z-index: 2; }
+}
+
+@keyframes prince-body-bob {
+   0%, 100% { transform: translateY(0); }
+   50% { transform: translateY(-1px); }
+}
+
+@keyframes prince-pose-hide { to { opacity: 0; } }
+@keyframes prince-pose-show { to { opacity: 1; } }
+

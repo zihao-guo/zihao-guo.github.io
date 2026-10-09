@@ -23,21 +23,22 @@ document.addEventListener('DOMContentLoaded', function () {
    var pauseButton = document.getElementById('snakePauseBtn');
    var continueButton = document.getElementById('snakeContinueBtn');
    var startButton = document.getElementById('snakeStartBtn');
+   var gameEl = document.getElementById('princeSnakeGame');
+   var modalContent = modalEl && modalEl.querySelector('.snake-modal__content');
+   var confettiEl = document.getElementById('snakeConfetti');
+   var previousOverflow;
    var gamePaused = true;
    var gameStarted = false;
 
+   // Keep the dialog above every page stacking context, including the sidebar.
+   if (modalEl) document.body.appendChild(modalEl);
+
    var newsItems = [
       {
-         date: 'Sep 2025',
+         date: 'Oct 2022',
          description: 'One paper is accepted by {link}.',
-         linkLabel: 'Nature Methods',
-         linkUrl: 'https://www.nature.com/nmeth/',
-      },
-      {
-         date: 'Mar 2025',
-         description: 'One paper is accepted by {link}.',
-         linkLabel: 'Lion19',
-         linkUrl: 'https://lion19.org/',
+         linkLabel: 'ACM EITCE 2022',
+         linkUrl: 'https://dl.acm.org/doi/proceedings/10.1145/3573428',
       },
       {
          date: 'Apr 2024',
@@ -46,10 +47,16 @@ document.addEventListener('DOMContentLoaded', function () {
          linkUrl: 'https://www.mdpi.com/journal/biomimetics',
       },
       {
-         date: 'Oct 2022',
+         date: 'Mar 2025',
          description: 'One paper is accepted by {link}.',
-         linkLabel: 'ACM EITCE 2022',
-         linkUrl: 'https://dl.acm.org/doi/proceedings/10.1145/3573428',
+         linkLabel: 'Lion19',
+         linkUrl: 'https://lion19.org/',
+      },
+      {
+         date: 'Sep 2025',
+         description: 'One paper is accepted by {link}.',
+         linkLabel: 'Nature Methods',
+         linkUrl: 'https://www.nature.com/nmeth/',
       },
    ];
 
@@ -198,6 +205,12 @@ document.addEventListener('DOMContentLoaded', function () {
    }
 
    document.addEventListener('keydown', function (event) {
+      if (!gameStarted || gamePaused || (gameEl && gameEl.hidden)) return;
+      if (event.altKey || event.ctrlKey || event.metaKey) return;
+      var target = event.target;
+      if (target && (target.isContentEditable || target.closest('input, textarea, select'))) return;
+      if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].indexOf(event.key) === -1) return;
+      event.preventDefault();
       switch (event.key) {
          case 'ArrowUp':
             setDirection('up');
@@ -270,6 +283,7 @@ document.addEventListener('DOMContentLoaded', function () {
          resetProgress();
          updateGuideText();
          updateControlStates();
+         canvas.focus({ preventScroll: true });
       });
    }
 
@@ -284,6 +298,23 @@ document.addEventListener('DOMContentLoaded', function () {
       }
    }
 
+   function celebrateHeadlines() {
+      if (!confettiEl) return;
+      confettiEl.textContent = '';
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      var colors = ['#81d8d0', '#efb5c8', '#f4d778', '#a8c8ed', '#b8d9a3'];
+      for (var i = 0; i < 110; i += 1) {
+         var ribbon = document.createElement('span');
+         ribbon.style.left = (Math.random() * 100) + '%';
+         ribbon.style.backgroundColor = colors[i % colors.length];
+         ribbon.style.setProperty('--confetti-delay', (Math.random() * 0.8) + 's');
+         ribbon.style.setProperty('--confetti-duration', (3.4 + Math.random() * 1.2) + 's');
+         ribbon.style.setProperty('--confetti-drift', (Math.random() * 100 - 50) + 'px');
+         ribbon.style.setProperty('--confetti-turn', (Math.random() * 720 - 360) + 'deg');
+         confettiEl.appendChild(ribbon);
+      }
+   }
+
    function handleCompletion() {
       gamePaused = true;
       updateControlStates();
@@ -291,12 +322,23 @@ document.addEventListener('DOMContentLoaded', function () {
          nextEl.textContent = 'All headlines unlocked. Tap Play again to restart.';
       }
       if (modalEl) {
+         if (gameEl) gameEl.inert = true;
+         previousOverflow = document.body.style.overflow;
+         document.body.style.overflow = 'hidden';
          modalEl.classList.add('is-visible');
          modalEl.setAttribute('aria-hidden', 'false');
+         celebrateHeadlines();
+         if (modalContent) modalContent.focus({ preventScroll: true });
       }
    }
 
    function hideModal() {
+      if (confettiEl) confettiEl.textContent = '';
+      if (gameEl) gameEl.inert = false;
+      if (previousOverflow !== undefined) {
+         document.body.style.overflow = previousOverflow;
+         previousOverflow = undefined;
+      }
       if (modalEl) {
          modalEl.classList.remove('is-visible');
          modalEl.setAttribute('aria-hidden', 'true');
@@ -311,6 +353,7 @@ document.addEventListener('DOMContentLoaded', function () {
          gamePaused = false;
          updateGuideText();
          updateControlStates();
+         canvas.focus({ preventScroll: true });
       });
    }
 
@@ -321,6 +364,34 @@ document.addEventListener('DOMContentLoaded', function () {
          updateControlStates();
       });
    }
+
+   if (modalEl) {
+      modalEl.addEventListener('keydown', function (event) {
+         if (!modalEl.classList.contains('is-visible')) return;
+         if (event.key === 'Escape' && continueButton) {
+            event.preventDefault();
+            continueButton.click();
+         } else if (event.key === 'Tab') {
+            var controls = modalEl.querySelectorAll('a[href], button:not(:disabled)');
+            var first = controls[0];
+            var last = controls[controls.length - 1];
+            if (!first) return;
+            if (event.shiftKey && (document.activeElement === first || document.activeElement === modalContent)) {
+               event.preventDefault();
+               last.focus();
+            } else if (!event.shiftKey && (document.activeElement === last || document.activeElement === modalContent)) {
+               event.preventDefault();
+               first.focus();
+            }
+         }
+      });
+   }
+
+   window.addEventListener('pagehide', function () {
+      gamePaused = true;
+      hideModal();
+      updateControlStates();
+   });
 
    updateGuideText();
    draw();

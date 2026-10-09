@@ -1,0 +1,4 @@
+/* Only the shared sidebar background uses Tiffany blue. */
+.row.bg-primary-2 {
+   background-color: #81d8d0 !important;
+}

@@ -178,7 +178,7 @@ Created by : mutationthemes
    box-shadow:0 0.5rem 1rem rgba(0,0,0,0.08);
    transition:transform 0.15s ease, box-shadow 0.15s ease;
 }
-.snake-btn:focus{
+.snake-btn:focus-visible{
    outline:2px solid #16da9d;
    outline-offset:2px;
 }
@@ -237,15 +237,41 @@ Created by : mutationthemes
 }
 .snake-modal__content{
    position:relative;
+   z-index:2;
    background:#ffffff;
    border-radius:1rem;
    padding:2rem;
    max-width:520px;
    width:90%;
    box-shadow:0 1.25rem 2.5rem rgba(0,0,0,0.25);
+   max-height:calc(100dvh - 40px);
+   overflow-y:auto;
+   outline:none;
 }
 .snake-modal__list li{
    border-top:none;
+}
+.snake-confetti{
+   position:fixed;
+   inset:0;
+   overflow:hidden;
+   pointer-events:none;
+   z-index:1;
+}
+.snake-confetti span{
+   position:absolute;
+   top:-20px;
+   width:7px;
+   height:15px;
+   border-radius:2px;
+   opacity:0;
+   animation:snake-confetti-fall var(--confetti-duration) linear var(--confetti-delay) both;
+}
+@keyframes snake-confetti-fall{
+   0%{opacity:0;transform:translateY(0) rotate(0);}
+   8%{opacity:0.9;}
+   85%{opacity:0.9;}
+   100%{opacity:0;transform:translate(var(--confetti-drift), calc(100vh + 40px)) rotate(var(--confetti-turn));}
 }
 .snake-modal__actions{
    display:flex;

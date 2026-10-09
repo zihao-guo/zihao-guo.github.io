@@ -1,0 +1,32 @@
+.contact-page {
+   display: flex;
+   flex-direction: column;
+}
+
+.contact-animation {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 75%;
+   max-width: 640px;
+   margin: auto auto 0;
+   padding: 12px;
+   overflow: hidden;
+   border: 1px solid #dceeee;
+   border-radius: 24px;
+   background: #eff8fb;
+   box-shadow: 0 8px 24px rgba(42, 71, 89, 0.06);
+}
+
+.contact-animation img {
+   display: block;
+   width: 100%;
+   height: auto;
+   border-radius: 16px;
+}
+
+@media (max-width: 575px) {
+   .contact-animation {
+      width: 100%;
+   }
+}

@@ -1,19 +1,17 @@
 # Zihao-Eric GUO
 
-My site is live at https://zihao-guo.github.io
+Personal and academic website: [zihao-guo.github.io](https://zihao-guo.github.io).
+
+![The Little Prince catches a rose and makes a peace sign](src/images/little-prince-rose.svg)
 
 ## Repository structure
-- `pages/` — all HTML entry points (`index.html`, `project.html`, research/project detail pages); open `pages/index.html` locally or use the redirecting root `index.html`.
-- `src/` — long-lived shared media (`src/images/`), downloads (`src/doc/` such as `src/doc/CV/CV_pdf/CV_Zihao_EN.pdf`), and the sitemap at `src/new_sitemap.xml`.
-- `utils/` — runtime web assets (`utils/css/`, `utils/js/`, `utils/webfonts/`) referenced by every HTML page.
-- `AGENTS.md`, `README.md` — contributor documentation.
 
+- `pages/` — HTML pages; root `index.html` redirects to `pages/index.html`.
+- `src/` — images, documents, and sitemap.
+- `utils/` — stylesheets, scripts, and fonts.
 
-# Memo
-Remember to save the cv to: /src/doc/CV/CV_pdf/CV_Zihao_EN.pdf
+## Memo
 
-
-## !!! ing  !!! 
-- [ ] Research interests
-- [ ] new aboutMe.html
-- [ ] To be revised: house price forecasting + RL + mathematical modeling
+- English CV: `src/doc/CV/CV_pdf/CV_Zihao_EN.pdf`
+- LaTeX source: `src/doc/CV/CV_latex/CV_Zihao_EN.tex`
+- French CV: `src/doc/CV/CV_pdf/CV_Zihao_FR.pdf`
