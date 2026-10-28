@@ -1,0 +1,123 @@
+.lydia-project-card {
+  padding: 0;
+  max-width: 100%;
+  text-align: left;
+  color: #172338;
+}
+
+.lydia-project-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform .3s;
+}
+
+#module8:hover img,
+#module8:focus-visible img {
+  transform: none;
+}
+
+#modal8 .lydia-project-preview {
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+#modal8 .lydia-project-preview img {
+  transition: transform .3s ease;
+}
+
+#modal8 .lydia-project-preview:hover img {
+  transform: scale(1.15);
+}
+
+.lydia-project-card__caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, .96);
+  border-top: 1px solid #dce3ee;
+}
+
+.lydia-project-card__caption strong,
+.lydia-project-card__caption span {
+  display: block;
+  line-height: 1.5;
+}
+
+.lydia-project-card__caption span {
+  font-size: 12px;
+}
+
+.lydia-project-card:focus-visible {
+  outline: 3px solid #3157e8;
+  outline-offset: 3px;
+}
+
+#modal7, #modal8 {
+  z-index: 1050;
+  overflow-y: auto;
+  padding: 24px 12px;
+}
+
+#modal7 .modal-content, #modal8 .modal-content {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 28px;
+}
+
+#lydia-project-title, #smart-predict-title {
+  padding-right: 24px;
+}
+
+.lydia-project-subtitle {
+  color: #64748b;
+  font-size: 13px;
+}
+
+.lydia-project-close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  border: 0;
+  background: transparent;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.lydia-project-links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+  margin: 20px 0;
+}
+
+.lydia-project-links a {
+  color: #2646c5;
+  font-weight: 600;
+}
+
+.lydia-project-links .lydia-project-live {
+  background: #3157e8;
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 6px;
+}
+
+.lydia-project-preview img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid #dce3ee;
+  border-radius: 8px;
+}
+
+@media (max-width: 575px) {
+  #modal7 .modal-content, #modal8 .modal-content {
+    padding: 24px 16px;
+  }
+}

@@ -192,14 +192,15 @@ function closeModalByDot(closeDot) {
 }
 
 
-window.onclick = function(event) {
-    const modals = document.getElementsByClassName("modal");
-    for (let i = 0; i < modals.length; i++) {
-        if (event.target == modals[i]) {
-            modals[i].style.display = "none";
-        }
+// Close a project modal when its backdrop is clicked, while keeping clicks
+// inside the project details and their links intact.
+document.addEventListener("click", function(event) {
+    var backdrop = event.target;
+    if (backdrop.classList && backdrop.classList.contains("modal") &&
+        /^modal[1-8]$/.test(backdrop.id)) {
+        closeModal(backdrop.id);
     }
-}
+});
 
 
 // CV download dialog

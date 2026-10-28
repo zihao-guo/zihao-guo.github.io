@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- Css -->
     <link rel="stylesheet" href="../utils/css/styles.css">
+    <link rel="stylesheet" href="../utils/css/project-lydia.css?v=20261028">
     <link rel="icon" href="../src/images/favicon.ico">
     <link href="../utils/css/bootstrap.css?v=20261009-sidebar" rel="stylesheet" type="text/css" media="all" />
     <link href="../utils/css/main.css?v=20261009-sidebar" rel="stylesheet" type="text/css" media="all" />
@@ -125,6 +126,14 @@
                     </div>
 <!-- 下面是各个项目的可点击卡片 -->
                     <div class="container">
+                        <button class="rectangle-module lydia-project-card" id="module8" type="button" onclick="openModal('modal8')" aria-haspopup="dialog" aria-controls="modal8" aria-label="View Smart Predict-then-Optimize project">
+                            <img src="../src/images/Projet/smart-predict-cover.svg" alt="Data, prediction, optimization and decision flow" loading="lazy">
+                            <span class="lydia-project-card__caption"><strong>Smart Predict-then-Optimize</strong><span>Decision-focused learning · Optimization &rarr;</span></span>
+                        </button>
+                        <button class="rectangle-module lydia-project-card" id="module7" type="button" onclick="openModal('modal7')" aria-haspopup="dialog" aria-controls="modal7" aria-label="View transaction labeling project">
+                            <img src="../src/images/Projet/lydia-transaction-cover.svg" alt="Card transaction classified into a spending category" loading="lazy">
+                            <span class="lydia-project-card__caption"><strong>Transaction Labeling</strong><span>Machine Learning · FastAPI · Live demo &rarr;</span></span>
+                        </button>
                         <div class="module" id="module1" onclick="openModal('modal1')">
                             <img src="../src/images/Projet/amex.jpg" alt="模块1">
                             <div class="hover-text">Type: Deep Learning</div>
@@ -151,6 +160,33 @@
                         </div>
                     </div>
 <!-- ========== 弹窗内容（modals） ========== -->
+                    <div id="modal8" class="modal" role="dialog" aria-modal="true" aria-labelledby="smart-predict-title" tabindex="-1">
+                        <div class="modal-content">
+                            <button class="lydia-project-close" type="button" onclick="closeModal('modal8')" aria-label="Close Smart Predict-then-Optimize project details">&times;</button>
+                            <h5 id="smart-predict-title">Smart Predict-then-Optimize</h5>
+                            <div class="right-aligned-text"><span class="label label-info_2">Oct.2024 - Aug.2025</span></div>
+                            <p class="lydia-project-subtitle">Decision-focused learning · Mathematical optimization · In development</p>
+                            <p>Traditional predict-then-optimize treats prediction and optimization separately. This creates two sources of error: inaccurate predictions and the resulting loss in decision quality. A model with low prediction error can still lead to costly decisions because prediction errors affect the optimization outcome differently.</p>
+                            <p>Smart Predict-then-Optimize (SPO) connects learning to the downstream optimization problem, training predictions with decision regret in mind to improve the final decisions.</p>
+                            <div class="lydia-project-preview"><img src="../src/images/Projet/smart-predict-learning-framework.png" alt="End-to-end predict-then-optimize learning framework" loading="lazy"></div>
+                        </div>
+                    </div>
+                    <div id="modal7" class="modal lydia-project-modal" role="dialog" aria-modal="true" aria-labelledby="lydia-project-title" tabindex="-1">
+                        <div class="modal-content">
+                            <button class="lydia-project-close" type="button" onclick="closeModal('modal7')" aria-label="Close transaction labeling project details">&times;</button>
+                            <h5 id="lydia-project-title">Transaction Labeling</h5>
+                            <div class="right-aligned-text"><span class="label label-info_2">Aug.2026 - Sep.2026</span></div>
+                            <p class="lydia-project-subtitle">Machine Learning · Natural Language Processing · Web Application</p>
+                            <p><strong>Problem:</strong> Card transactions need consistent categories to help users understand their spending, but merchant descriptions and transaction details vary.</p>
+                            <p><strong>Approach:</strong> Combine transaction text and structured features in a calibrated linear SVM, with a rule for refunds. A FastAPI service and web frontend support individual and CSV batch predictions across 12 minor categories and 8 derived major categories.</p>
+                            <p><strong>Test set results:</strong> On 1,601 synthetic transactions held out chronologically, the complete prediction flow achieved 95.50% accuracy and 0.9413 macro-F1.</p>
+                            <div class="lydia-project-links">
+                                <a class="lydia-project-live" href="https://zihao-guo.github.io/lydia_zihao-eric/" target="_blank" rel="noopener noreferrer">Open live frontend &nearr;</a>
+                                <a href="https://github.com/zihao-guo/lydia_zihao-eric" target="_blank" rel="noopener noreferrer">Code repository &nearr;</a>
+                                <a href="https://lydia-transaction-api-504999617745.europe-west1.run.app/docs" target="_blank" rel="noopener noreferrer">API documentation &nearr;</a>
+                            </div>
+                        </div>
+                    </div>
 <!-- modal1 -->
                     <div id="modal1" class="modal">
                         <div class="modal-content">
@@ -215,7 +251,7 @@
                             <span class="close-dot" onclick="closeModalByDot(this)"></span>
                             <h5>PyTorch Vision Transformer — Ants vs. Bees</h5>
                             <div class="right-aligned-text">
-                                <span class="label label-info_2">Sep.2022 - Present</span>
+                                <span class="label label-info_2">Sep.2022 - Oct.2022</span>
                                 <p><span><b>Self-learning · Deep Learning</b></span></p>
                             </div>
                             <p>The project fine-tunes a Vision Transformer for a two-way classification task (bees vs. ants), standing on top of the open-source <a href="https://github.com/jeonsworld/ViT-pytorch" target="_blank">ViT-pytorch</a> weights and a lightweight PyTorch training stack. It emphasizes rapid experimentation with data pipelines, attention heads, and inference tooling so that the ViT backbone can be easily re-used for other small datasets. Current utilities cover loading pretrained models, evaluating them on ImageNet or custom data, and quickly fine-tuning on bespoke datasets, while upcoming work aims at full from-scratch training and ONNX export.

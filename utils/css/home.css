@@ -182,3 +182,58 @@
 @keyframes prince-pose-hide { to { opacity: 0; } }
 @keyframes prince-pose-show { to { opacity: 1; } }
 
+
+/* Homepage hierarchy and reading experience. */
+body { font-family: 'Poppins', sans-serif; }
+.home-skip { position: absolute; left: 16px; top: 16px; z-index: 1100; padding: 8px 12px; background: #fff; color: #153c3b; transform: translateY(-200%); }
+.home-skip:focus { transform: translateY(0); }
+#home-main h1, #home-main h2, #home-main h5 { text-wrap: balance; }
+#home-main p { text-wrap: pretty; }
+.home-eyebrow { color: #36746e; font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 16px; }
+.hero-headline { padding: 0; margin-bottom: 16px; }
+.hero-name { font-size: 48px; line-height: 1; letter-spacing: -.03em; text-transform: none !important; background: linear-gradient(90deg,#000,#666); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; animation: none; }
+.hero-role { max-width: 680px; font-size: 18px; line-height: 28px; color: #536662; opacity: 1; animation: none; }
+.interest-card { background: #f1f8f6; border: 0; border-radius: 16px; box-shadow: none; padding: 24px; margin: 24px 0 !important; opacity: 1; animation: none; }
+.interest-title { padding: 0; font-size: 14px; line-height: 20px; letter-spacing: .06em; text-transform: none !important; color: #36746e; }
+.interest-title:before { display: none; }
+.interest-list { font-size: 16px; line-height: 24px; animation: none; }
+#home-main a:focus-visible, #home-main button:focus-visible { outline: 3px solid #28665f; outline-offset: 4px; }
+#home-main .hero-grid-row .justify-content-center { justify-content: flex-start !important; }
+.home-news-title { font-size: 20px; line-height: 28px; font-weight: 600; margin-bottom: 12px; }
+#home-main .contact-info ul { padding-left: 16px; color: #536662; font-size: 14px; line-height: 20px; }
+#home-main .contact-info li { margin-bottom: 8px; }
+#home-main .profile-image img[src*="portrait-enhanced"] { border-radius: 16px; }
+@media (max-width: 767px) { .hero-name { font-size: 36px; line-height: 40px; } .home-eyebrow { margin-top: 16px; } }
+
+.home-social {
+   display: flex;
+   flex-wrap: wrap;
+   align-items: baseline;
+   gap: 8px 16px;
+   margin-top: 24px;
+   font-size: 14px;
+   line-height: 20px;
+}
+.home-social__label { color: #536662; }
+.home-social a {
+   color: #28665f;
+   font-weight: 600;
+   text-decoration: none;
+   transition: opacity 300ms cubic-bezier(.22,1,.36,1);
+}
+.home-social a:hover { color: #28665f; text-decoration: underline; }
+.home-social a:active { opacity: .65; }
+
+/* Keep profile links aligned with the portrait. */
+#home-main .profile-image img[src*="portrait-enhanced"] {
+   display: block;
+   width: 100% !important;
+   max-width: 400px;
+   margin-left: auto !important;
+   margin-right: auto;
+}
+.home-social {
+   max-width: 400px;
+   margin: 16px auto 0;
+   justify-content: center;
+}
