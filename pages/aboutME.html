@@ -125,6 +125,109 @@
          .modal-open {
             overflow: hidden;
          }
+         .about-intro {
+            height: 100%;
+            border: 1px solid #dce5f3;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 8px 24px rgba(30, 52, 100, 0.06);
+         }
+         .about-intro__name { margin: 0 0 12px; color: #111b3a; font-size: 1.5rem; line-height: 2rem; font-weight: 600; text-wrap: balance; }
+         .about-intro p { color: #4d5870; line-height: 1.6; text-wrap: pretty; }
+         .about-intro__content { display: flex; flex-direction: column; justify-content: center; height: 100%; }
+         .about-intro__focus { margin-top: 16px; padding-top: 16px; border-top: 1px solid #dce5f3; }
+         .about-intro__focus strong { display: block; margin-bottom: 4px; color: #111b3a; font-size: 0.875rem; }
+         .about-intro__focus span { display: block; padding-left: 16px; position: relative; }
+         .about-intro__focus span::before { content: "•"; position: absolute; left: 0; color: #3158aa; }
+         @media (min-width: 992px) {
+            .about-portrait, .about-portrait ul { height: 100%; }
+            .about-portrait ul { position: relative; }
+            .about-portrait img { position: absolute; inset: 2rem 3rem; width: calc(100% - 6rem); height: calc(100% - 4rem); object-fit: cover; }
+         }
+         .about-highlights { margin-top: 16px; gap: 30px; }
+         .about-highlights .highlight-trigger {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 16px;
+            border-color: #dce5f3;
+            border-radius: 8px;
+            background: #fff;
+            transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 300ms cubic-bezier(0.22, 1, 0.36, 1);
+         }
+         .about-highlights .highlight-trigger:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(30, 52, 100, 0.1); }
+         .about-highlights .highlight-trigger:active { transform: translateY(1px); }
+         .about-highlights .highlight-kicker { margin-bottom: 8px; color: #3158aa; font-size: 0.75rem; line-height: 1rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; }
+         .about-highlights .highlight-value { color: #111b3a; font-size: 1rem; line-height: 1.5rem; }
+         .about-highlights .highlight-label { margin-top: 4px; color: #56617a; font-size: 0.875rem; line-height: 1.25rem; }
+         .about-highlights .highlight-action { margin-top: auto; padding-top: 12px; color: #3158aa; font-size: 0.875rem; line-height: 1.25rem; font-weight: 600; }
+         @media (max-width: 991px) {
+            .about-highlights { gap: 12px; }
+         }
+         @media (prefers-reduced-motion: reduce) {
+            .about-highlights .highlight-trigger { transition: none; }
+            .about-highlights .highlight-trigger:hover, .about-highlights .highlight-trigger:active { transform: none; }
+         }
+         @media (max-width: 575px) {
+            .about-intro { padding: 16px; }
+         }
+         .industry-section .res-block-inner.exp {
+            border: 1px solid #dce5f3;
+            border-radius: 8px;
+            background: #f8faff;
+            box-shadow: 0 4px 12px rgba(30, 52, 100, 0.06);
+            transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 300ms cubic-bezier(0.22, 1, 0.36, 1);
+         }
+         .industry-section .res-block-inner.exp:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(30, 52, 100, 0.12);
+         }
+         .industry-section .res-block-inner.exp:active { transform: translateY(1px); }
+         .industry-path {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            column-gap: 24px;
+            padding-right: 16px;
+            position: relative;
+         }
+         .industry-path__line {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            overflow: visible;
+            pointer-events: none;
+         }
+         .industry-path__line path {
+            fill: none;
+            stroke: #c5d7f0;
+            stroke-width: 2;
+            stroke-linecap: round;
+         }
+         .industry-section .timeline-content {
+            padding-left: 32px;
+         }
+         .industry-section .timeline-content::before {
+            content: "";
+            position: absolute;
+            z-index: 1;
+            top: 20px;
+            left: 3px;
+            width: 12px;
+            height: 12px;
+            border: 2px solid #5178c7;
+            border-radius: 50%;
+            background: #fff;
+         }
+         .industry-section .timeline-content::after { display: none; }
+         @media (max-width: 991px) {
+            .industry-path { grid-template-columns: 1fr; padding-right: 0; }
+         }
+         @media (prefers-reduced-motion: reduce) {
+            .industry-section .res-block-inner.exp { transition: none; }
+            .industry-section .res-block-inner.exp:hover,
+            .industry-section .res-block-inner.exp:active { transform: none; }
+         }
       </style>
       <link href="../utils/css/theme.css?v=20261009-sidebar" rel="stylesheet" type="text/css" media="all" />
    </head>
@@ -249,42 +352,45 @@
                               <h2 class="h4 ml-2 mb-0 font-weight-600 ">About Me</h2>
                            </div>
                         </div>
-                        <div class="col-lg-6 mb-5 mb-lg-0">
-                           <div class="resume-hero">
-                              <div>
+                        <div class="col-lg-6 mb-4 mb-lg-0">
+                           <div class="about-intro">
+                              <div class="about-intro__content">
+                                 <h3 class="about-intro__name">Hi, I'm Zihao GUO <span>(Eric)</span></h3>
                                  <p class="mb-2">
-                                    Hi there! My name is <strong>Zihao GUO</strong>, or you can call me Eric.
-                                    I'm currently a PhD student @ <a href="https://www.ip-paris.fr/">Institut Polytechnique de Paris</a>
-                                    under the supervision of Dr. <a href="https://www-public.imtbs-tsp.eu/~araldo/pmwiki/pmwiki.php?n=Main.HomePage">Andrea ARALDO</a> and Dr. <a href="https://elyacoubi.wp.imt.fr/">Mounim EL YACOUBI</a>.
-                                    My research topic is preserving graph performance in an exogenously perturbed environment.
+                                    I'm a PhD student at <a href="https://www.ip-paris.fr/">Institut Polytechnique de Paris</a>, investigating how to preserve graph performance under external perturbations, under the supervision of Dr. <a href="https://www-public.imtbs-tsp.eu/~araldo/pmwiki/pmwiki.php?n=Main.HomePage">Andrea ARALDO</a> and Dr. <a href="https://elyacoubi.wp.imt.fr/">Mounim EL YACOUBI</a>.
                                  </p>
-                                 <p class="mb-0 ">I love everything about statistics and optimization, and I’m excited to share my knowledge, passion, and tools with collaborators.</p>
-                                 <ul class="resume-highlights resume-highlights--compact mt-4">
-                                    <li class="highlight-card">
-                                       <button type="button" class="highlight-trigger experience-card" data-modal-target="modal-credential" aria-haspopup="dialog" aria-controls="modal-credential">
-                                          <span class="highlight-value">Interdisciplinary</span>
-                                          <span class="highlight-label">collaborating across labs &amp; industry</span>
-                                          <span class="highlight-action">View certification &rarr;</span>
-                                       </button>
-                                    </li>
-                                    <li class="highlight-card">
-                                       <button type="button" class="highlight-trigger experience-card" data-modal-target="modal-languages" aria-haspopup="dialog" aria-controls="modal-languages">
-                                          <span class="highlight-value">Multilingual</span>
-                                          <span class="highlight-label">working across EN · FR · CN</span>
-                                          <span class="highlight-action">View languages &rarr;</span>
-                                       </button>
-                                    </li>
-                                 </ul>
+                                 <p class="mb-0">I hold a generalist engineering degree from <a href="https://www.ec-nantes.fr/">École Centrale de Nantes</a>, with a focus on applied mathematics. I enjoy collaborating on statistics and optimization.</p>
+                                 <p class="about-intro__focus mb-0"><strong>Research interests</strong><span>Data driven decision making</span><span>Optimization under uncertainty</span><span>LLM post-training &amp; self-improvement</span></p>
                               </div>
                            </div>
                         </div>
                         <div class="col-lg-6">
-                           <div class="main-info ">
+                           <div class="main-info about-portrait">
                              <ul class="list-inline mb-0">
-                              <img src="../src/images/aboutME.JPG" alt="phone" >
+                              <img src="../src/images/aboutME.JPG" alt="Zihao Guo">
                              </ul>
                            </div>
                          </div>
+                        <div class="col-12">
+                                 <ul class="resume-highlights resume-highlights--compact about-highlights">
+                                    <li class="highlight-card">
+                                       <button type="button" class="highlight-trigger experience-card" data-modal-target="modal-credential" aria-haspopup="dialog" aria-controls="modal-credential">
+                                          <span class="highlight-kicker">Google Cloud Certified</span>
+                                          <span class="highlight-value">Professional Machine Learning Engineer</span>
+                                          <span class="highlight-label">2026.8 — 2028.8</span>
+                                          <span class="highlight-action">View credential <span aria-hidden="true">&rarr;</span></span>
+                                       </button>
+                                    </li>
+                                    <li class="highlight-card">
+                                       <button type="button" class="highlight-trigger experience-card" data-modal-target="modal-languages" aria-haspopup="dialog" aria-controls="modal-languages">
+                                          <span class="highlight-kicker">Communication</span>
+                                          <span class="highlight-value">Languages</span>
+                                          <span class="highlight-label">Chinese · English · French</span>
+                                          <span class="highlight-action">View proficiency <span aria-hidden="true">&rarr;</span></span>
+                                       </button>
+                                    </li>
+                                 </ul>
+                        </div>
                         
                      </div>
 
@@ -436,13 +542,15 @@
                            </div>
                         </div>
                      </div>
-<div class="row mt-4">
+                     <div class="row mt-4 industry-section">
                         <div class="col-lg-12">
                            <div class="main-title position-relative mb-4">
                               <h2 class="h4 ml-2 mb-0 font-weight-600">Industrial Experience</h2>
                            </div>
                         </div>
-                        <div class="col-lg-6">
+                        <div class="col-12">
+                           <div class="industry-path">
+                              <svg class="industry-path__line" aria-hidden="true"><path /></svg>
                            <div class="res-block timeline-content mb-4">
                               <div class="mb-3 res-block-inner exp current experience-card" data-modal-target="modal-alg" tabindex="0" role="button" aria-haspopup="dialog" aria-controls="modal-alg">
                                  <div class="media align-items-center">
@@ -456,20 +564,6 @@
                               <p class="mb-0">@ <a href="https://www.huawei.com/fr/">Huawei</a> — Shanghai, CHINA</p>
                            </div>
                            <div class="res-block timeline-content mb-4">
-                              <div class="mb-3 res-block-inner exp current experience-card" data-modal-target="modal-dataeng" tabindex="0" role="button" aria-haspopup="dialog" aria-controls="modal-dataeng">
-                                 <div class="media align-items-center">
-                                    <h6 class="font-weight-600 font-size-14 mb-0"> Data Scientist
-                                       <span class="font-size-13 mt-1 text-alt d-block font-weight-400"> 2022.4 — 2022.9 </span> </h6>
-                                    <div class="media-body text-right">
-                                       <span class="badge  bg-primary-2">Internship</span>
-                                    </div>
-                                 </div>
-                              </div>
-                              <p class="mb-0">@ <a href="https://www.ifpenergiesnouvelles.com/">IFP Energies nouvelles</a> — Rueil-Malmaison, FRANCE</p>
-                           </div>
-                        </div>
-                        <div class="col-lg-6">
-                           <div class="res-block timeline-content mb-4">
                               <div class="mb-3 res-block-inner exp current experience-card" data-modal-target="modal-genomics" tabindex="0" role="button" aria-haspopup="dialog" aria-controls="modal-genomics">
                                  <div class="media align-items-center">
                                     <h6 class="font-weight-600 font-size-14 mb-0"> Algorithm Developer
@@ -482,6 +576,18 @@
                               <p class="mb-0">@ <a href="https://www.ebi.ac.uk/">European Bioinformatics Institute</a> — Cambridge, UK</p>
                            </div>
                            <div class="res-block timeline-content mb-4">
+                              <div class="mb-3 res-block-inner exp current experience-card" data-modal-target="modal-dataeng" tabindex="0" role="button" aria-haspopup="dialog" aria-controls="modal-dataeng">
+                                 <div class="media align-items-center">
+                                    <h6 class="font-weight-600 font-size-14 mb-0"> Data Scientist
+                                       <span class="font-size-13 mt-1 text-alt d-block font-weight-400"> 2022.4 — 2022.9 </span> </h6>
+                                    <div class="media-body text-right">
+                                       <span class="badge  bg-primary-2">Internship</span>
+                                    </div>
+                                 </div>
+                              </div>
+                              <p class="mb-0">@ <a href="https://www.ifpenergiesnouvelles.com/">IFP Energies nouvelles</a> — Rueil-Malmaison, FRANCE</p>
+                           </div>
+                           <div class="res-block timeline-content mb-4">
                               <div class="mb-3 res-block-inner exp experience-card" data-modal-target="modal-dataanalyst" tabindex="0" role="button" aria-haspopup="dialog" aria-controls="modal-dataanalyst">
                                  <div class="media align-items-center">
                                     <h6 class="font-weight-600 font-size-14 mb-0"> Data Scientist
@@ -492,6 +598,7 @@
                                  </div>
                               </div>
                               <p class="mb-0">@ <a href="https://www.tencent.com" target="_blank" rel="noopener">Tencent</a> — Beijing, China (Remote)</p>
+                           </div>
                            </div>
                         </div>
                      </div>
@@ -539,7 +646,13 @@
          <div class="experience-modal__content">
             <button type="button" class="experience-modal__close" data-close-modal aria-label="Close">&times;</button>
             <h4 id="modal-credential-title" class="pr-3">Professional Machine Learning Engineer Certification</h4>
-            <p class="text-muted mb-3">Google</p>
+            <p class="text-muted mb-3">Google Cloud · 2026.8 — 2028.8</p>
+            <p class="font-weight-600 mb-2">Related roles</p>
+            <ul class="mb-3 pl-3">
+               <li><strong>Machine Learning Engineer:</strong> Build and maintain machine learning models and systems.</li>
+               <li><strong>Machine Learning Researcher:</strong> Research and prototype new machine learning methods.</li>
+               <li><strong>AI Engineer:</strong> Develop AI applications using software and hardware platforms.</li>
+            </ul>
             <div class="d-flex justify-content-end">
                <a class="experience-modal__project-link" href="https://www.credly.com/badges/e405495c-f66a-462f-b5aa-d9f07dfe290a/linked_in_profile" target="_blank" rel="noopener noreferrer">Show credential <span aria-hidden="true">&nearr;</span></a>
             </div>
@@ -582,7 +695,7 @@
       <div id="modal-sau" class="experience-modal" role="dialog" aria-modal="true" aria-labelledby="modal-sau-title">
          <div class="experience-modal__content">
             <button type="button" class="experience-modal__close" data-close-modal aria-label="Close">&times;</button>
-            <h4 id="modal-sau-title" class="pr-3"><a href="https://www.lnu.edu.cn/" target="_blank" rel="noopener">Liaoning University</a></h4>
+            <h4 id="modal-sau-title" class="pr-3"><a href="https://www.sau.edu.cn" target="_blank" rel="noopener">Shenyang University of Aeronautics and Astronautics</a></h4>
             <p class="text-muted mb-2">Bachelor of Engineering · 2017 — 2021</p>
             <p class="mb-0">Specialization in Mechanical Engineering.</p>
          </div>
@@ -645,6 +758,41 @@
 
       <script>
          document.addEventListener('DOMContentLoaded', function () {
+            const industryPath = document.querySelector('.industry-path');
+            const drawIndustryPath = () => {
+               if (!industryPath) return;
+               const bounds = industryPath.getBoundingClientRect();
+               const points = Array.from(industryPath.querySelectorAll('.timeline-content')).map(item => {
+                  const rect = item.getBoundingClientRect();
+                  return { x: rect.left - bounds.left + 9, y: rect.top - bounds.top + 26, top: rect.top - bounds.top, bottom: rect.bottom - bounds.top };
+               });
+               if (!points.length) return;
+               let path = `M ${points[0].x} ${points[0].y}`;
+               points.slice(1).forEach((point, index) => {
+                  const previous = points[index];
+                  const midY = (previous.y + point.y) / 2;
+                  if (previous.x > point.x && point.y > previous.y) {
+                     const rightEdge = bounds.width - 8;
+                     const rowBottom = Math.max(...points.filter(item => Math.abs(item.top - previous.top) < 1).map(item => item.bottom));
+                     const gapY = (rowBottom + point.top) / 2;
+                     const bend = Math.min(8, (gapY - previous.y) / 2, (point.y - gapY) / 2);
+                     path += ` L ${rightEdge - bend} ${previous.y}`;
+                     path += ` Q ${rightEdge} ${previous.y}, ${rightEdge} ${previous.y + bend}`;
+                     path += ` L ${rightEdge} ${gapY - bend}`;
+                     path += ` Q ${rightEdge} ${gapY}, ${rightEdge - bend} ${gapY}`;
+                     path += ` L ${point.x + bend} ${gapY}`;
+                     path += ` Q ${point.x} ${gapY}, ${point.x} ${gapY + bend}`;
+                     path += ` L ${point.x} ${point.y}`;
+                  } else {
+                     path += ` C ${previous.x} ${midY}, ${point.x} ${midY}, ${point.x} ${point.y}`;
+                  }
+               });
+               industryPath.querySelector('path').setAttribute('d', path);
+            };
+            drawIndustryPath();
+            window.addEventListener('resize', drawIndustryPath);
+            if (industryPath && 'ResizeObserver' in window) new ResizeObserver(drawIndustryPath).observe(industryPath);
+
             const cards = Array.from(document.querySelectorAll('.experience-card'));
             const modals = Array.from(document.querySelectorAll('.experience-modal'));
             let modalTrigger = null;
